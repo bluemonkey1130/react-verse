@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import {Grid, Row, Block} from "../components/Grid/Grid";
 import logo from '../assets/logo.svg';
-import classes from './App.module.css';
+import classes from './App.module.scss';
 
 import PropTypes from 'prop-types';
 
