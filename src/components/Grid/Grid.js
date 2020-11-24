@@ -120,7 +120,6 @@ export const Block = styled.div`
     align-items: stretch;
     display: inherit;
     grid-auto-flow: dense;
-    grid-gap: 2rem;
     grid-column: ${({colStart}) => handleColumnStart(colStart)} /  ${({colSpan}) => handleColumnSpan(colSpan)};
     grid-row: ${({rowStart}) => handleRowStart(rowStart)} /  ${({rowSpan}) => handleRowSpan(rowSpan)};
 `
