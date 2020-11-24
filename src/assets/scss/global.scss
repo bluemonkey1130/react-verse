@@ -6,6 +6,7 @@
 
 // Pull in modern reset
 @import 'reset';
+@import url('https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
 // Global CSS starts
 body {
@@ -16,19 +17,33 @@ body {
   @include apply-utility('weight', 'medium');
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
+  margin: 0 0 get-size('400') 0;
 }
 
 h1 {
   font-size: get-size('700');
 }
 
-h2,
-h3 {
+h2 {
   font-size: get-size('600');
+}
+
+h3 {
+  font-size: get-size('500');
+}
+
+h4 {
+  font-size: get-size('450');
+}
+
+h5 {
+  font-size: get-size('400');
+}
+
+h6 {
+  font-size: get-size('300');
 }
 
 a {
@@ -47,6 +62,7 @@ th {
   outline: 2px dotted;
   outline-offset: 0.25rem;
 }
+
 // Utilities
 @import 'utilities/flow';
 @import 'utilities/radius';
@@ -62,3 +78,4 @@ th {
 @import 'blocks/summary';
 @import 'blocks/table-group';
 @import 'blocks/user';
+@import 'blocks/hero';

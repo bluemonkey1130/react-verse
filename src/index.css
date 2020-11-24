@@ -22,12 +22,13 @@
  * This powers everything from utility class generation to breakpoints
  * to enabling/disabling pre-built components/utilities.
  */
+@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 .bg-primary {
-  background: #74CAC9;
+  background: #112E66;
 }
 
 .bg-secondary {
-  background: #3D7D7C;
+  background: #0E3B93;
 }
 
 .bg-secondary-shade {
@@ -59,11 +60,11 @@
 }
 
 .color-primary {
-  color: #74CAC9;
+  color: #112E66;
 }
 
 .color-secondary {
-  color: #3D7D7C;
+  color: #0E3B93;
 }
 
 .color-secondary-shade {
@@ -210,6 +211,8 @@ h1,
 h2,
 h3,
 h4,
+h5,
+h6,
 p,
 ul[class],
 ol[class],
@@ -251,10 +254,6 @@ picture {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
-}
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -284,19 +283,29 @@ body {
   font-weight: 500;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
+  margin: 0 0 1rem 0;
 }
 
 h1 {
   font-size: 2.4rem;
 }
 
-h2,
-h3 {
+h2 {
   font-size: 1.77rem;
+}
+
+h3 {
+  font-size: 1.33rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.8rem;
 }
 
 a {
@@ -320,7 +329,7 @@ th {
   margin-top: var(--flow-space, 1rem);
 }
 
-.radius, .button {
+.radius {
   border-radius: 0.5rem;
 }
 
@@ -365,10 +374,11 @@ th {
   display: inline-block;
   line-height: 1;
   text-decoration: none;
-  border: 1px solid #3D7D7C;
-  background: #3D7D7C;
+  border-bottom: 1px solid transparent;
+  transition: border ease-in 200ms;
   padding: 0.6rem 1.5rem;
   position: relative;
+  color: #F8F8F8;
   font-weight: 700;
 }
 .button[data-variant=ghost] {
@@ -380,12 +390,39 @@ th {
   outline: 1px solid;
 }
 .button:hover {
-  background: #74CAC9;
-  border-color: #74CAC9;
+  border-color: #112E66;
   color: #F8F8F8;
 }
 .button:active {
   transform: scale(0.95);
+}
+.button.standard {
+  display: inline-block;
+}
+.button.standard:after {
+  display: inline;
+  font-family: "Font Awesome 5 Free";
+  content: "  ";
+  font-weight: 900;
+  padding: 0 5px 5px 0;
+}
+.button.call-to-action {
+  display: inline-block;
+  color: #F8F8F8;
+  background-size: 100% 100%;
+  text-decoration: none;
+  padding: 0.6rem 2rem;
+  cursor: pointer;
+  text-align: center;
+  transition: all ease-in 200ms;
+}
+.button.call-to-action:hover {
+  background: #0E3B93;
+  color: #F8F8F8;
+  transition: all ease-in 200ms;
+}
+.button.call-to-action:after {
+  content: "";
 }
 
 .key-header {
@@ -482,6 +519,42 @@ th {
 }
 .user img {
   border-radius: 100%;
+}
+
+article.hero {
+  grid-template-rows: 1fr 50px;
+  position: relative;
+}
+article.hero section.slider {
+  grid-row: 1;
+  z-index: 2;
+}
+article.hero section.slider div {
+  text-align: center;
+  z-index: 2;
+}
+article.hero section.slider-nav {
+  align-self: end;
+  grid-row: 2;
+  z-index: 2;
+}
+article.hero section.media {
+  grid-column: 1/span 14;
+  grid-row: 1/span 2;
+  height: 90vh;
+  max-height: 85vh;
+  object-fit: cover;
+  overflow: hidden;
+  width: 100%;
+}
+article.hero:after {
+  background-color: rgba(17, 46, 102, 0.9);
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

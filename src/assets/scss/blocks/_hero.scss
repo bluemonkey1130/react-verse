@@ -1,0 +1,44 @@
+article.hero {
+  grid-template-rows: 1fr 50px;
+  position: relative;
+
+  section {
+    &.slider {
+      grid-row: 1;
+      z-index: 2;
+      div {
+        text-align: center;
+        z-index: 2;
+        h1, p {
+          color: get-color('white');
+        }
+      }
+    }
+
+    &.slider-nav {
+      align-self: end;
+      grid-row: 2;
+      z-index: 2;
+    }
+
+    &.media {
+      grid-column: 1 / span 14;
+      grid-row: 1 / span 2;
+      height: 90vh;
+      max-height: 85vh;
+      object-fit: cover;
+      overflow: hidden;
+      width: 100%;
+    }
+  }
+
+  &:after {
+    background-color: rgba(get-color('primary'), 0.9);
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+}

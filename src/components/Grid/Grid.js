@@ -5,10 +5,10 @@ const handleRowWidth = (width) => {
         case "standard":
             return 'grid-column-start: 3;' +
                 'grid-column-end: 13;'
-        case "alignwide":
+        case "align-wide":
             return 'grid-column-start: 2;' +
                 'grid-column-end: 14;'
-        case "alignfull":
+        case "align-full":
             return 'grid-column-start: 1;' +
                 'grid-column-end: 15;'
         default:
@@ -101,12 +101,13 @@ export const Grid = styled.article`
     grid-auto-rows: minmax(min-content, max-content);
     grid-template-columns: [full-start] minmax(calc(calc(100% - 1500px) / 2), 1fr) [main-start] repeat(12, [col-start] 1fr) [main-end] minmax(calc(calc(100% - 1500px) / 2), 1fr) [full-end];
     grid-template-rows: auto;
-    grid-row-gap:2rem;
+    // grid-row-gap:2rem;
     margin: 0 auto;
 `
 
 export const Row = styled.section`
     ${({width}) => handleRowWidth(width)};
+    align-content: ${(props) => props.align ? props.align : 'unset'};
     align-items: stretch;
     display: grid;
     grid-auto-flow: dense;

@@ -1,14 +1,13 @@
 .button {
-  @extend .radius;
-
   font: inherit;
   display: inline-block;
   line-height: 1;
   text-decoration: none;
-  border: 1px solid get-color('secondary');
-  background: get-color('secondary');
+  border-bottom: 1px solid transparent;
+  transition: border ease-in 200ms;
   padding: 0.6rem 1.5rem;
   position: relative;
+  color: get-color('light');
 
   @include apply-utility('weight', 'bold');
 
@@ -23,12 +22,45 @@
   }
 
   &:hover {
-    background: get-color('primary');
     border-color: get-color('primary');
     color: get-color('light');
   }
 
   &:active {
     transform: scale(0.95);
+  }
+
+  &.standard {
+    display: inline-block;
+
+    &:after {
+      display: inline;
+      font-family: 'Font Awesome 5 Free';
+      content: '  \f054';
+      font-weight: 900;
+      padding: 0 5px 5px 0;
+    }
+  }
+
+  &.call-to-action {
+    display: inline-block;
+    color: get-color('light');
+    background-size: 100% 100%;
+    text-decoration: none;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    background: get-color('blue');
+    text-align: center;
+    transition: all ease-in 200ms;
+
+    &:hover {
+      background: get-color('secondary');
+      color: get-color('light');
+      transition: all ease-in 200ms;
+    }
+
+    &:after {
+      content: "";
+    }
   }
 }
