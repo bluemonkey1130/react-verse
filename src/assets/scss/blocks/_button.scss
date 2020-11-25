@@ -8,6 +8,7 @@
   padding: 0.6rem 1.5rem;
   position: relative;
   color: get-color('light');
+  box-sizing: border-box;
 
   @include apply-utility('weight', 'bold');
 

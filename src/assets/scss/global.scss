@@ -13,42 +13,9 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   padding-bottom: get-size('600');
-
   @include apply-utility('weight', 'medium');
 }
 
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  margin: 0 0 get-size('400') 0;
-}
-
-h1 {
-  font-size: get-size('700');
-}
-
-h2 {
-  font-size: get-size('600');
-}
-
-h3 {
-  font-size: get-size('500');
-}
-
-h4 {
-  font-size: get-size('450');
-}
-
-h5 {
-  font-size: get-size('400');
-}
-
-h6 {
-  font-size: get-size('300');
-}
-
-a {
-  color: currentColor;
-}
 
 table {
   border-collapse: collapse;
@@ -62,6 +29,8 @@ th {
   outline: 2px dotted;
   outline-offset: 0.25rem;
 }
+// Base
+@import 'base/typography';
 
 // Utilities
 @import 'utilities/flow';

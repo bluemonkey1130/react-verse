@@ -6,11 +6,36 @@ article.hero {
     &.slider {
       grid-row: 1;
       z-index: 2;
-      div {
+
+      .slick-slider {
+        align-items: center;
+        display: inline-flex;
         text-align: center;
-        z-index: 2;
-        h1, p {
-          color: get-color('white');
+        justify-content: center;
+        padding: 4rem 0;
+        grid-column-start: 2;
+        grid-column-end: 12;
+
+        .slick-list {
+          .slick-slide {
+            div {
+              margin: 0 auto;
+              z-index: 2;
+              text-align: center;
+
+              &:focus {
+                outline: none;
+              }
+
+              h1, p {
+                color: get-color('light');
+              }
+
+              .button {
+                margin-top: 4rem;
+              }
+            }
+          }
         }
       }
     }
@@ -19,6 +44,79 @@ article.hero {
       align-self: end;
       grid-row: 2;
       z-index: 2;
+
+      .slick-slider {
+        grid-column-start: 2;
+        grid-column-end: 12;
+        .slick-slide{
+          &.slick-current {
+            .tab-link{
+              button {
+                color: get-color('light');
+                span {
+                  color: get-color('tertiary');
+                }
+                &:after {
+                  left: 0;
+                  right: auto;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+        .tab-link {
+          align-items: center;
+          cursor: pointer;
+          display: inherit;
+          text-align: center;
+
+          &:focus, &:active {
+            outline: none;
+          }
+
+          button {
+            background-color: transparent;
+            border-radius: 0;
+            border: none;
+            color: get-color('grey');
+            cursor: pointer;
+            display: inline;
+            font-size: 1.2rem;
+            overflow: hidden;
+            padding-bottom: 3rem;
+            position: relative;
+
+            &:focus, &:active {
+              outline: none;
+            }
+
+            &:after {
+              background: get-color('tertiary');
+              bottom: 0;
+              content: "";
+              height: 5px;
+              position: absolute;
+              right: 0;
+              transition-duration: 200ms;
+              transition-property: width;
+              transition-timing-function: ease-out;
+              width: 0;
+              z-index: -1;
+            }
+          }
+
+          &:hover {
+            button {
+              color: get-color('light');
+
+              span {
+                color: get-color('tertiary');
+              }
+            }
+          }
+        }
+      }
     }
 
     &.media {
