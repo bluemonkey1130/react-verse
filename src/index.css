@@ -747,4 +747,8 @@ section.hero:after {
   width: 100%;
 }
 
+section.tabs > div .slick-slider {
+  grid-column: 3/span 8;
+}
+
 /*# sourceMappingURL=index.css.map */

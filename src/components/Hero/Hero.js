@@ -3,8 +3,6 @@ import {Row, Block, Grid} from "../Grid/Grid";
 import classes from './Hero.module.scss';
 import heroImg from '../../assets/images/hero.jpg';
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 
 class hero extends Component {
     // TODO: move state management to App.js

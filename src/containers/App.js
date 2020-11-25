@@ -3,6 +3,8 @@ import Hero from "../components/Hero/Hero";
 import PropTypes from 'prop-types';
 import Text from "../components/Text/Text";
 import Tabs from "../components/Tabs/Tabs";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class App extends Component {
     state = {
@@ -43,13 +45,6 @@ class App extends Component {
             buttonText: 'Button Text'
         },
         tabs: [
-            {
-                id: '13040',
-                channel: 1,
-                title: 'This is a wide container title stretching two lines.',
-                text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipiscing.',
-                img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
-            },
             {
                 id: '13050',
                 channel: 1,
