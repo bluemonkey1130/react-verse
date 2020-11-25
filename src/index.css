@@ -168,6 +168,30 @@
   padding-top: 4.5rem;
 }
 
+.pad-bottom-300 {
+  padding-bottom: 1.2rem;
+}
+
+.pad-bottom-400 {
+  padding-bottom: 1.5rem;
+}
+
+.pad-bottom-500 {
+  padding-bottom: 1.995rem;
+}
+
+.pad-bottom-600 {
+  padding-bottom: 2.655rem;
+}
+
+.pad-bottom-700 {
+  padding-bottom: 3.6rem;
+}
+
+.pad-bottom-800 {
+  padding-bottom: 4.5rem;
+}
+
 .pad-300 {
   padding: 1.2rem;
 }
@@ -765,9 +789,6 @@ section.hero:after {
   width: 100%;
 }
 
-.tabs {
-  margin-bottom: 4rem;
-}
 .tabs button {
   border: none;
   background: transparent;
@@ -801,9 +822,6 @@ section.hero:after {
   transition-timing-function: ease-out;
 }
 
-.tab-content > div {
-  margin: 1rem;
-}
 .tab-content > div figure {
   margin-bottom: 1.5rem;
   overflow: hidden;
@@ -828,6 +846,18 @@ section.hero:after {
 }
 .tab-content > div .button:hover {
   border-bottom: 1px solid #112E66;
+}
+
+.map {
+  height: 500px;
+  width: 100%;
+}
+.map .google-map {
+  width: 100%;
+  height: 500px;
+}
+.map .pin-icon {
+  font-size: 4.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */

@@ -5,12 +5,10 @@ import Text from "../components/Text/Text";
 import Tabs from "../components/Tabs/Tabs";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import ShoutBox from "../components/ShoutBox/ShoutBox";
+import Location from "../components/Location/Location";
 
 class App extends Component {
-    // constructor(props) {
-    //     super();
-    //     this.tabHandler = this.tabHandler.bind(this);
-    // }
     state = {
         slides: [
             {
@@ -115,7 +113,20 @@ class App extends Component {
                 img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80'
             }
         ],
-        visibleTab: 2
+        visibleTab: 2,
+        shoutContent: {
+            title: 'Here we have a two line display intro',
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n' +
+                'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n' +
+                'ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+            img: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2700&q=80',
+            buttonText: 'Link & Arrow'
+        },
+        locationContent:{
+            title:'A message followd by a way to get in touch',
+            contactNumber:'+(0) 1234 567 890',
+            buttonText:'Button Text'
+        }
     }
     tabHandler = (index) => {
         this.setState({
@@ -134,6 +145,10 @@ class App extends Component {
                     clicked={this.tabHandler}
                     visibleTab={this.state.visibleTab}
                     tabs={this.state.tabs}/>
+                <ShoutBox
+                    content={this.state.shoutContent}/>
+                <Location
+                    content={this.state.locationContent}/>
             </Fragment>
 
         );

@@ -76,6 +76,11 @@ $gorko-config: (
                 'output': 'standard',
                 'property': 'padding-top'
         ),
+        'pad-bottom': (
+                'items': $gorko-size-scale,
+                'output': 'standard',
+                'property': 'padding-bottom'
+        ),
         'pad': (
                 'items': $gorko-size-scale,
                 'output': 'standard',

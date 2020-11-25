@@ -1,6 +1,4 @@
 .tabs {
-  margin-bottom: 4rem;
-
   button {
     border: none;
     background: transparent;
@@ -41,8 +39,6 @@
 
 .tab-content {
   > div {
-    margin: 1rem;
-
     figure {
       margin-bottom: get-size('400');
       overflow: hidden;

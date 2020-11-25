@@ -5,7 +5,7 @@ const Text = (props) => {
 
     return (
         <Grid>
-            <Row width={'narrow'} className={'pad-800 align-center'}>
+            <Row width={'narrow'} className={'pad-top-800 pad-bottom-800 align-center'}>
                 <Block>
                     <h2 className={'h1'}>{props.content.title}</h2>
                     <p>{props.content.text}</p>

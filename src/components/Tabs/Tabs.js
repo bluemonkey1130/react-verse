@@ -36,7 +36,7 @@ class Tabs extends Component {
                             </button>
                         </Block>
                     </Row>
-                    <Row width={'align-wide'} className="tab-content">
+                    <Row width={'align-wide'} className="tab-content pad-top-800 pad-bottom-800">
                         {tabsTemplate(this.props.visibleTab)}
                     </Row>
                 </Grid>
