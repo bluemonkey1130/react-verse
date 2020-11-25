@@ -18,7 +18,8 @@ $gorko-size-scale: (
         '400': $gorko-base-size,
         '500': $gorko-base-size * 1.33,
         '600': $gorko-base-size * 1.77,
-        '700': $gorko-base-size * 2.4
+        '700': $gorko-base-size * 2.4,
+        '800': $gorko-base-size * 3
 );
 
 /**
@@ -73,10 +74,29 @@ $gorko-config: (
                 'output': 'standard',
                 'property': 'padding-top'
         ),
+        'pad': (
+                'items': $gorko-size-scale,
+                'output': 'standard',
+                'property': 'padding'
+        ),
+        'margin': (
+                'items': $gorko-size-scale,
+                'output': 'standard',
+                'property': 'margin'
+        ),
         'text': (
                 'items': $gorko-size-scale,
                 'output': 'responsive',
                 'property': 'font-size'
+        ),
+        'align': (
+                'items': (
+                        'right': 'right',
+                        'center': 'center',
+                        'left': 'left'
+                ),
+                'output': 'responsive',
+                'property': 'text-align'
         ),
         'weight': (
                 'items': (

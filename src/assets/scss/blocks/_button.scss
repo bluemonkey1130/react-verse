@@ -5,12 +5,14 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border ease-in 200ms;
-  padding: 0.6rem 1.5rem;
+  padding: get-size('300') get-size('400');
+  margin: get-size('400');
   position: relative;
+  font-size: get-size('300');
   color: get-color('light');
   box-sizing: border-box;
-
-  @include apply-utility('weight', 'bold');
+  justify-self: center;
+  @include apply-utility('weight', 'medium');
 
   &[data-variant='ghost'] {
     border-color: currentColor;
@@ -48,9 +50,9 @@
     color: get-color('light');
     background-size: 100% 100%;
     text-decoration: none;
-    padding: 0.6rem 2rem;
+    padding: get-size('300') get-size('500');
     cursor: pointer;
-    background: get-color('blue');
+    background: get-color('primary');
     text-align: center;
     transition: all ease-in 200ms;
 

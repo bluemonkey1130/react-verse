@@ -124,6 +124,10 @@
   margin-top: 3.6rem;
 }
 
+.gap-top-800 {
+  margin-top: 4.5rem;
+}
+
 .pad-top-300 {
   padding-top: 1.2rem;
 }
@@ -144,6 +148,58 @@
   padding-top: 3.6rem;
 }
 
+.pad-top-800 {
+  padding-top: 4.5rem;
+}
+
+.pad-300 {
+  padding: 1.2rem;
+}
+
+.pad-400 {
+  padding: 1.5rem;
+}
+
+.pad-500 {
+  padding: 1.995rem;
+}
+
+.pad-600 {
+  padding: 2.655rem;
+}
+
+.pad-700 {
+  padding: 3.6rem;
+}
+
+.pad-800 {
+  padding: 4.5rem;
+}
+
+.margin-300 {
+  margin: 1.2rem;
+}
+
+.margin-400 {
+  margin: 1.5rem;
+}
+
+.margin-500 {
+  margin: 1.995rem;
+}
+
+.margin-600 {
+  margin: 2.655rem;
+}
+
+.margin-700 {
+  margin: 3.6rem;
+}
+
+.margin-800 {
+  margin: 4.5rem;
+}
+
 .text-300 {
   font-size: 1.2rem;
 }
@@ -162,6 +218,22 @@
 
 .text-700 {
   font-size: 3.6rem;
+}
+
+.text-800 {
+  font-size: 4.5rem;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.align-center {
+  text-align: center;
+}
+
+.align-left {
+  text-align: left;
 }
 
 .weight-medium {
@@ -191,6 +263,22 @@
 
   .md\:text-700 {
     font-size: 3.6rem;
+  }
+
+  .md\:text-800 {
+    font-size: 4.5rem;
+  }
+
+  .md\:align-right {
+    text-align: right;
+  }
+
+  .md\:align-center {
+    text-align: center;
+  }
+
+  .md\:align-left {
+    text-align: left;
   }
 }
 /* Box sizing rules */
@@ -322,6 +410,10 @@ h3, .h3 {
   font-size: 1.995rem;
 }
 
+h4, .h4 {
+  font-size: 1.5rem;
+}
+
 h5, .h5 {
   font-size: 1.5rem;
 }
@@ -391,11 +483,14 @@ p {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border ease-in 200ms;
-  padding: 0.6rem 1.5rem;
+  padding: 1.2rem 1.5rem;
+  margin: 1.5rem;
   position: relative;
+  font-size: 1.2rem;
   color: #F8F8F8;
   box-sizing: border-box;
-  font-weight: 700;
+  justify-self: center;
+  font-weight: 500;
 }
 .button[data-variant=ghost] {
   border-color: currentColor;
@@ -427,8 +522,9 @@ p {
   color: #F8F8F8;
   background-size: 100% 100%;
   text-decoration: none;
-  padding: 0.6rem 2rem;
+  padding: 1.2rem 1.995rem;
   cursor: pointer;
+  background: #112E66;
   text-align: center;
   transition: all ease-in 200ms;
 }
@@ -537,15 +633,15 @@ p {
   border-radius: 100%;
 }
 
-article.hero {
+section.hero {
   grid-template-rows: 1fr 50px;
   position: relative;
 }
-article.hero section.slider {
+section.hero > div.slider {
   grid-row: 1;
   z-index: 2;
 }
-article.hero section.slider .slick-slider {
+section.hero > div.slider .slick-slider {
   align-items: center;
   display: inline-flex;
   text-align: center;
@@ -554,50 +650,50 @@ article.hero section.slider .slick-slider {
   grid-column-start: 2;
   grid-column-end: 12;
 }
-article.hero section.slider .slick-slider .slick-list .slick-slide div {
+section.hero > div.slider .slick-slider .slick-list .slick-slide div {
   margin: 0 auto;
   z-index: 2;
   text-align: center;
 }
-article.hero section.slider .slick-slider .slick-list .slick-slide div:focus {
+section.hero > div.slider .slick-slider .slick-list .slick-slide div:focus {
   outline: none;
 }
-article.hero section.slider .slick-slider .slick-list .slick-slide div h1, article.hero section.slider .slick-slider .slick-list .slick-slide div p {
+section.hero > div.slider .slick-slider .slick-list .slick-slide div h1, section.hero > div.slider .slick-slider .slick-list .slick-slide div p {
   color: #F8F8F8;
 }
-article.hero section.slider .slick-slider .slick-list .slick-slide div .button {
+section.hero > div.slider .slick-slider .slick-list .slick-slide div .button {
   margin-top: 4rem;
 }
-article.hero section.slider-nav {
+section.hero > div.slider-nav {
   align-self: end;
   grid-row: 2;
   z-index: 2;
 }
-article.hero section.slider-nav .slick-slider {
+section.hero > div.slider-nav .slick-slider {
   grid-column-start: 2;
   grid-column-end: 12;
 }
-article.hero section.slider-nav .slick-slider .slick-slide.slick-current .tab-link button {
+section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button {
   color: #F8F8F8;
 }
-article.hero section.slider-nav .slick-slider .slick-slide.slick-current .tab-link button span {
+section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button span {
   color: #F18366;
 }
-article.hero section.slider-nav .slick-slider .slick-slide.slick-current .tab-link button:after {
+section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button:after {
   left: 0;
   right: auto;
   width: 100%;
 }
-article.hero section.slider-nav .slick-slider .tab-link {
+section.hero > div.slider-nav .slick-slider .tab-link {
   align-items: center;
   cursor: pointer;
   display: inherit;
   text-align: center;
 }
-article.hero section.slider-nav .slick-slider .tab-link:focus, article.hero section.slider-nav .slick-slider .tab-link:active {
+section.hero > div.slider-nav .slick-slider .tab-link:focus, section.hero > div.slider-nav .slick-slider .tab-link:active {
   outline: none;
 }
-article.hero section.slider-nav .slick-slider .tab-link button {
+section.hero > div.slider-nav .slick-slider .tab-link button {
   background-color: transparent;
   border-radius: 0;
   border: none;
@@ -609,10 +705,10 @@ article.hero section.slider-nav .slick-slider .tab-link button {
   padding-bottom: 3rem;
   position: relative;
 }
-article.hero section.slider-nav .slick-slider .tab-link button:focus, article.hero section.slider-nav .slick-slider .tab-link button:active {
+section.hero > div.slider-nav .slick-slider .tab-link button:focus, section.hero > div.slider-nav .slick-slider .tab-link button:active {
   outline: none;
 }
-article.hero section.slider-nav .slick-slider .tab-link button:after {
+section.hero > div.slider-nav .slick-slider .tab-link button:after {
   background: #F18366;
   bottom: 0;
   content: "";
@@ -625,13 +721,13 @@ article.hero section.slider-nav .slick-slider .tab-link button:after {
   width: 0;
   z-index: -1;
 }
-article.hero section.slider-nav .slick-slider .tab-link:hover button {
+section.hero > div.slider-nav .slick-slider .tab-link:hover button {
   color: #F8F8F8;
 }
-article.hero section.slider-nav .slick-slider .tab-link:hover button span {
+section.hero > div.slider-nav .slick-slider .tab-link:hover button span {
   color: #F18366;
 }
-article.hero section.media {
+section.hero > div.media {
   grid-column: 1/span 14;
   grid-row: 1/span 2;
   height: 90vh;
@@ -640,7 +736,7 @@ article.hero section.media {
   overflow: hidden;
   width: 100%;
 }
-article.hero:after {
+section.hero:after {
   background-color: rgba(17, 46, 102, 0.9);
   content: "";
   height: 100%;

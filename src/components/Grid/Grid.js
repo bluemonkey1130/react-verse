@@ -2,6 +2,9 @@ import styled from 'styled-components'
 
 const handleRowWidth = (width) => {
     switch (width) {
+        case "narrow":
+            return 'grid-column-start: 4;' +
+                'grid-column-end: 12;'
         case "standard":
             return 'grid-column-start: 3;' +
                 'grid-column-end: 13;'
@@ -94,7 +97,7 @@ const handleColumnSpan = (colSpan) => {
     }
 }
 
-export const Grid = styled.article`
+export const Grid = styled.section`
     align-items: stretch;
     display: grid;
     grid-auto-flow: dense;
@@ -105,7 +108,7 @@ export const Grid = styled.article`
     margin: 0 auto;
 `
 
-export const Row = styled.section`
+export const Row = styled.div`
     ${({width}) => handleRowWidth(width)};
     align-content: ${(props) => props.align ? props.align : 'unset'};
     align-items: stretch;
