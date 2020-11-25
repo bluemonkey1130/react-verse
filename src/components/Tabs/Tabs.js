@@ -11,9 +11,12 @@ class Tabs extends Component {
                 .map((filteredChannel, index) => {
                     return (
                         <Block key={filteredChannel.id} colSpan={4}>
-                            <img src={filteredChannel.img} alt=""/>
+                            <figure>
+                                <img src={filteredChannel.img} alt=""/>
+                            </figure>
                             <h3>{filteredChannel.title}</h3>
                             <p>{filteredChannel.text}</p>
+                            <a className="button standard" href="#">Link & Arrow</a>
                         </Block>
                     )
                 })
@@ -21,18 +24,19 @@ class Tabs extends Component {
         return (
             <Fragment>
                 <Grid>
-                    <Row width={'narrow'}>
+                    <Row width={'narrow'} className="tabs">
                         <Block colSpan={4}>
-                            <button onClick={() => this.props.clicked(1)} className={['tabLink']}>Channel One</button>
+                            <button className="filter-btn" onClick={() => this.props.clicked(1)}>Channel One</button>
                         </Block>
                         <Block colSpan={4}>
-                            <button onClick={() => this.props.clicked(2)} className={['tabLink']}>Channel Two</button>
+                            <button className="filter-btn" onClick={() => this.props.clicked(2)}>Channel Two</button>
                         </Block>
                         <Block colSpan={4}>
-                            <button onClick={() => this.props.clicked(3)} className={['tabLink']}>Channel Three</button>
+                            <button className="filter-btn" onClick={() => this.props.clicked(3)}>Channel Three
+                            </button>
                         </Block>
                     </Row>
-                    <Row width={'align-wide'} className={['pad-top-700']}>
+                    <Row width={'align-wide'} className="tab-content">
                         {tabsTemplate(this.props.visibleTab)}
                     </Row>
                 </Grid>

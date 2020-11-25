@@ -28,6 +28,10 @@
   background: #112E66;
 }
 
+.bg-primary-shade {
+  background: #F1F6FF;
+}
+
 .bg-secondary {
   background: #0E3B93;
 }
@@ -60,8 +64,16 @@
   background: #c4c4c4;
 }
 
+.bg-lightgrey {
+  background: #9ea9a9;
+}
+
 .color-primary {
   color: #112E66;
+}
+
+.color-primary-shade {
+  color: #F1F6FF;
 }
 
 .color-secondary {
@@ -94,6 +106,10 @@
 
 .color-grey {
   color: #c4c4c4;
+}
+
+.color-lightgrey {
+  color: #9ea9a9;
 }
 
 .font-base {
@@ -396,6 +412,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 0 1.5rem 0;
   font-family: "leikoregular", sans-serif;
   font-weight: 100;
+  color: #112E66;
 }
 
 h1, .h1 {
@@ -430,6 +447,7 @@ p {
   font-size: 1.5rem;
   font-family: "Tinos", sans-serif;
   font-weight: 100;
+  color: #112E66;
 }
 
 .flow > * + * {
@@ -747,8 +765,69 @@ section.hero:after {
   width: 100%;
 }
 
-section.tabs > div .slick-slider {
-  grid-column: 3/span 8;
+.tabs {
+  margin-bottom: 4rem;
+}
+.tabs button {
+  border: none;
+  background: transparent;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  text-align: center;
+  transition-duration: 200ms;
+  transition-property: all;
+  transition-timing-function: ease-out;
+  cursor: pointer;
+}
+.tabs button.filter-btn {
+  border-bottom: 5px solid;
+  padding: 1.5rem;
+}
+.tabs button.active {
+  border-bottom: 5px solid #112E66;
+  color: #112E66;
+  transition-duration: 200ms;
+  transition-property: all;
+  transition-timing-function: ease-out;
+}
+.tabs button:hover {
+  background-color: #F1F6FF;
+  border-bottom: 5px solid #112E66;
+  color: #112E66;
+  text-decoration: none;
+  transition-duration: 200ms;
+  transition-property: all;
+  transition-timing-function: ease-out;
+}
+
+.tab-content > div {
+  margin: 1rem;
+}
+.tab-content > div figure {
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  position: relative;
+}
+.tab-content > div figure:hover img {
+  transition: all 200ms ease-in-out;
+  transform: scale(1.1);
+}
+.tab-content > div figure img {
+  transition: all 0.2s ease-in-out;
+}
+.tab-content > div p {
+  font-size: 1.2rem;
+}
+.tab-content > div .button {
+  font-size: 1.2rem;
+  color: #112E66;
+  justify-self: flex-start;
+  margin: 0;
+  padding-left: 0;
+}
+.tab-content > div .button:hover {
+  border-bottom: 1px solid #112E66;
 }
 
 /*# sourceMappingURL=index.css.map */

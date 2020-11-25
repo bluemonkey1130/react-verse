@@ -26,7 +26,7 @@ class hero extends Component {
                                 <div key={slide.id}>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.content}</p>
-                                    <a className={['button standard']} href='#'>{slide.buttonText}</a>
+                                    <a className="button standard" href='#'>{slide.buttonText}</a>
                                 </div>
                             )
                         }
