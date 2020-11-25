@@ -5,12 +5,8 @@ import heroImg from '../../assets/images/hero.jpg';
 import Slider from "react-slick";
 
 class hero extends Component {
-    // TODO: move state management to App.js
-    state = {
-        nav1: null,
-        nav2: null,
-    }
-    componentDidMount() {
+
+    componentDidMount = () => {
         this.setState({
             nav1: this.slider1,
             nav2: this.slider2
@@ -20,7 +16,7 @@ class hero extends Component {
     render() {
         let slides = null
         slides = (
-            <Slider asNavFor={this.state.nav2}
+            <Slider asNavFor={this.slider2}
                     arrows={false}
                     fade={true}
                     ref={slider => (this.slider1 = slider)}>
@@ -40,7 +36,7 @@ class hero extends Component {
         )
         let sliderNav = null
         sliderNav = (
-            <Slider asNavFor={this.state.nav1}
+            <Slider asNavFor={this.slider1}
                     ref={slider => (this.slider2 = slider)}
                     slidesToShow={3}
                     swipeToSlide={true}

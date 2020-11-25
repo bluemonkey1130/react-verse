@@ -76,7 +76,6 @@ const handleRowSpan = (rowSpan) => {
             return 'auto'
     }
 }
-
 const handleColumnSpan = (colSpan) => {
     switch (colSpan) {
         case 1:
