@@ -9,15 +9,15 @@ section.hero {
 
       .slick-slider {
         align-items: center;
-        display: inline-flex;
+        display: flex;
         text-align: center;
         justify-content: center;
         padding: 4rem 0;
-        grid-column-start: 2;
-        grid-column-end: 12;
+        grid-column: 3 / span 8;
 
         .slick-list {
           .slick-slide {
+            z-index: 5;
             div {
               margin: 0 auto;
               z-index: 2;
@@ -46,8 +46,7 @@ section.hero {
       z-index: 2;
 
       .slick-slider {
-        grid-column-start: 2;
-        grid-column-end: 12;
+        grid-column: 3 / span 8;
         .slick-slide{
           &.slick-current {
             .tab-link{

@@ -7,47 +7,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 class hero extends Component {
+    // TODO: move state management to App.js
     state = {
         nav1: null,
         nav2: null,
-        slides: [
-            {
-                id: '1',
-                tabTitle: 'Innovation Partner',
-                title: 'Here we have a two line display intro veniam',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n' +
-                    'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n' +
-                    'ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                buttonText: 'Link & Arrow'
-            },
-            {
-                id: '2',
-                tabTitle: 'Top Class Team',
-                title: 'Qui Thing nearly item region official hour very.',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n' +
-                    'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n' +
-                    'ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-                buttonText: 'Link & Arrow'
-            },
-            {
-                id: '3',
-                tabTitle: 'Corporate Solutions',
-                title: 'Nisi recusandae veniam minus deleniti unit nation.',
-                content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt\n' +
-                    'ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation\n' +
-                    'llamco laboris nisi ut aliquip ex ea commodo consequat.',
-                buttonText: 'Link & Arrow'
-            }
-        ],
     }
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         nav1: null,
-    //         nav2: null
-    //     };
-    // }
-
     componentDidMount() {
         this.setState({
             nav1: this.slider1,
@@ -63,7 +27,7 @@ class hero extends Component {
                     fade={true}
                     ref={slider => (this.slider1 = slider)}>
                 {
-                    this.state.slides.map((slide, index) => {
+                    this.props.slides.map((slide, index) => {
                             return (
                                 <div key={slide.id}>
                                     <h1>{slide.title}</h1>
@@ -82,9 +46,10 @@ class hero extends Component {
                     ref={slider => (this.slider2 = slider)}
                     slidesToShow={3}
                     swipeToSlide={true}
+                    adaptiveHeight={true}
                     focusOnSelect={true}>
                 {
-                    this.state.slides.map((slide, index) => {
+                    this.props.slides.map((slide, index) => {
                             return (
                                 <Block
                                     key={slide.id}
@@ -106,7 +71,7 @@ class hero extends Component {
                 <Row className='slider-nav'>
                     {sliderNav}
                 </Row>
-                <Row width='align-full' className={['media']}>
+                <Row width='align-wide' className={['media']}>
                     <Block>
                         <img src={heroImg} alt='logo'/>
                     </Block>

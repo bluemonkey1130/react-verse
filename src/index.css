@@ -22,7 +22,7 @@
  * This powers everything from utility class generation to breakpoints
  * to enabling/disabling pre-built components/utilities.
  */
-@import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=Tinos:400,500,600,700,800&display=swap");
 .bg-primary {
   background: #112E66;
@@ -643,12 +643,14 @@ section.hero > div.slider {
 }
 section.hero > div.slider .slick-slider {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   text-align: center;
   justify-content: center;
   padding: 4rem 0;
-  grid-column-start: 2;
-  grid-column-end: 12;
+  grid-column: 3/span 8;
+}
+section.hero > div.slider .slick-slider .slick-list .slick-slide {
+  z-index: 5;
 }
 section.hero > div.slider .slick-slider .slick-list .slick-slide div {
   margin: 0 auto;
@@ -670,8 +672,7 @@ section.hero > div.slider-nav {
   z-index: 2;
 }
 section.hero > div.slider-nav .slick-slider {
-  grid-column-start: 2;
-  grid-column-end: 12;
+  grid-column: 3/span 8;
 }
 section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button {
   color: #F8F8F8;
