@@ -1,16 +1,30 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
+import {Block, Grid, Row} from "../Grid/Grid";
 
 class Tabs extends Component {
 
     render() {
-        return this.props.channelOne.map((tab, index) => { // Apply function to each item in array
+
+        let tabsTemplate = this.props.tabs
+            .filter(targetChannel => targetChannel.channel === 1)
+            .map((filteredChannel, index) => {
             return (
-                <div>
-                    <h3>{tab.title}</h3>
-                </div>
+                <Block key={filteredChannel.id} colSpan={4}>
+                    <img src={filteredChannel.img} alt=""/>
+                    <h3>{filteredChannel.title}</h3>
+                    <p>{filteredChannel.text}</p>
+                </Block>
             )
         })
+
+        return (
+            <Grid>
+                <Row>
+                    {tabsTemplate}
+                </Row>
+            </Grid>
+        )
     }
 }
 
