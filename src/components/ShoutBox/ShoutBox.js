@@ -11,7 +11,7 @@ class ShoutBox extends Component {
                     <Block colSpan={6}>
                         <img src={this.props.content.img} alt=""/>
                     </Block>
-                    <Block colSpan={6}>
+                    <Block colSpan={6} className="align-left">
                         <h2 className="h1 color-light">{this.props.content.title}</h2>
                         <p className="color-light">{this.props.content.text}</p>
                         <a className="button standard color-light" href="#">{this.props.content.buttonText}</a>

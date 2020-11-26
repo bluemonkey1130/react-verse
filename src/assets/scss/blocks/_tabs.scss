@@ -12,8 +12,8 @@
     cursor: pointer;
 
     &.filter-btn {
-      border-bottom: 5px solid get-color('lightgray');
-      color: get-color('lightgray');
+      border-bottom: 5px solid get-color('grey');
+      color: get-color('grey');
       padding: 1.5rem;
     }
 
@@ -23,6 +23,9 @@
       transition-duration: 200ms;
       transition-property: all;
       transition-timing-function: ease-out;
+    }
+    &:focus{
+      outline: none;
     }
 
     &:hover {

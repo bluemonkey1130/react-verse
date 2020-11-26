@@ -5,13 +5,13 @@
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border ease-in 200ms;
-  padding: get-size('300') get-size('400');
+  padding: get-size('300') get-size('400') 0 0;
   margin: get-size('400');
   position: relative;
   font-size: get-size('300');
   color: get-color('light');
   box-sizing: border-box;
-  justify-self: center;
+
   @include apply-utility('weight', 'medium');
 
   &[data-variant='ghost'] {
@@ -55,7 +55,7 @@
     background: get-color('primary');
     text-align: center;
     transition: all ease-in 200ms;
-
+    justify-self: center;
     &:hover {
       background: get-color('secondary');
       color: get-color('light');

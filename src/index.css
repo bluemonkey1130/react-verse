@@ -525,13 +525,12 @@ p {
   text-decoration: none;
   border-bottom: 1px solid transparent;
   transition: border ease-in 200ms;
-  padding: 1.2rem 1.5rem;
+  padding: 1.2rem 1.5rem 0 0;
   margin: 1.5rem;
   position: relative;
   font-size: 1.2rem;
   color: #F8F8F8;
   box-sizing: border-box;
-  justify-self: center;
   font-weight: 500;
 }
 .button[data-variant=ghost] {
@@ -569,6 +568,7 @@ p {
   background: #112E66;
   text-align: center;
   transition: all ease-in 200ms;
+  justify-self: center;
 }
 .button.call-to-action:hover {
   background: #0E3B93;
@@ -802,7 +802,8 @@ section.hero:after {
   cursor: pointer;
 }
 .tabs button.filter-btn {
-  border-bottom: 5px solid;
+  border-bottom: 5px solid #c4c4c4;
+  color: #c4c4c4;
   padding: 1.5rem;
 }
 .tabs button.active {
@@ -811,6 +812,9 @@ section.hero:after {
   transition-duration: 200ms;
   transition-property: all;
   transition-timing-function: ease-out;
+}
+.tabs button:focus {
+  outline: none;
 }
 .tabs button:hover {
   background-color: #F1F6FF;
@@ -858,6 +862,49 @@ section.hero:after {
 }
 .map .pin-icon {
   font-size: 4.5rem;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background-color: #F8F8F8;
+  grid-template-columns: 1fr 150px 1fr;
+  grid-template-rows: 1fr;
+}
+.header nav {
+  grid-row: 1;
+  display: inline-flex;
+  justify-content: space-around;
+}
+.header nav a {
+  text-align: center;
+  border-bottom: 5px solid transparent;
+  transition: border ease-in 200ms;
+  display: inherit;
+  align-items: center;
+  font-family: "leikoregular", sans-serif;
+  text-decoration: none;
+}
+.header nav a p {
+  margin: 0;
+}
+.header nav a:hover {
+  text-decoration: none;
+  transition: border ease-in 200ms;
+  border-bottom: 5px solid #F18366;
+}
+.header a.logo {
+  grid-row: 1;
+  text-align: center;
+}
+.header a.logo:hover {
+  text-decoration: none;
+}
+.header a.logo .fas {
+  background: #F1F6FF;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
 }
 
 /*# sourceMappingURL=index.css.map */
