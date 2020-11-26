@@ -8,6 +8,20 @@
 @import 'reset';
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
+
+/*----------------------------------------
+    # Media Queries
+----------------------------------------*/
+// Usage: @media only screen and (max-width: $large) { ... }
+$large: 1300px;
+$medium-large: 1100px;
+$medium: 1000px;
+$largeTablet: 920px;
+$tablet: 767px;
+$phablet: 575px;
+$mobile: 480px;
+$smallmobile: 375px;
+
 // Global CSS starts
 body {
   line-height: 1.5;
@@ -31,6 +45,7 @@ th {
 }
 // Base
 @import 'base/typography';
+@import 'base/grid';
 
 // Utilities
 @import 'utilities/flow';
@@ -51,3 +66,4 @@ th {
 @import 'blocks/tabs';
 @import 'blocks/map';
 @import 'blocks/header';
+@import 'blocks/footer';

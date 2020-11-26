@@ -7,6 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ShoutBox from "../components/ShoutBox/ShoutBox";
 import Location from "../components/Location/Location";
 import Header from "../components/Header/Header";
+import Footer from "../components/Footer/Footer";
 
 class App extends Component {
     state = {
@@ -133,7 +134,22 @@ class App extends Component {
             {id: '18013', navText: 'Contact', align: 'right'},
             {id: '18014', navText: 'Navigation', align: 'right'},
             {id: '18015', navText: 'Navigation', align: 'right'},
-        ]
+        ],
+        footer: {
+            address: 'Floor 5, 12-14 Grey Street, Newcastle upon Tyne, NE1 6TE',
+            telephone: '0111 212 8111',
+            email: 'admin@horizonthemes.co.uk',
+            channelOneTitle: 'Services',
+            channelTwoTitle: 'Case Studies',
+            navList: [
+                {id: '49479', navText: 'About us', channel: 1},
+                {id: '49480', navText: 'About us', channel: 1},
+                {id: '49481', navText: 'About us', channel: 1},
+                {id: '49482', navText: 'About us', channel: 2},
+                {id: '49483', navText: 'About us', channel: 2},
+                {id: '49484', navText: 'About us', channel: 2},
+            ]
+        }
     }
     tabHandler = (index) => {
         this.setState({
@@ -158,6 +174,8 @@ class App extends Component {
                     content={this.state.shoutContent}/>
                 <Location
                     content={this.state.locationContent}/>
+                <Footer
+                    content={this.state.footer}/>
             </Fragment>
 
         );
