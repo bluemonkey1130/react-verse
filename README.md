@@ -6,4 +6,4 @@ https://www.figma.com/file/OLjuRAuzR4GRILARzgLmed/Tech-Task?node-id=0%3A1
 
 I've pulled in a few things style wise,
 
-I've used CSS modules, styled components & a utility class generator called gorka
+I've used CSS modules, styled components & a utility class generator called gorko
