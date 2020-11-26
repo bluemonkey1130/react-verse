@@ -142,12 +142,12 @@ class App extends Component {
             channelOneTitle: 'Services',
             channelTwoTitle: 'Case Studies',
             navList: [
-                {id: '49479', navText: 'About us', channel: 1},
-                {id: '49480', navText: 'About us', channel: 1},
-                {id: '49481', navText: 'About us', channel: 1},
-                {id: '49482', navText: 'About us', channel: 2},
-                {id: '49483', navText: 'About us', channel: 2},
-                {id: '49484', navText: 'About us', channel: 2},
+                {id: '49479', navText: 'Service One', channel: 1},
+                {id: '49480', navText: 'Service Two', channel: 1},
+                {id: '49481', navText: 'Service Three', channel: 1},
+                {id: '49482', navText: 'Case Study One', channel: 2},
+                {id: '49483', navText: 'Case Study Two', channel: 2},
+                {id: '49484', navText: 'Case Study Three', channel: 2},
             ]
         }
     }

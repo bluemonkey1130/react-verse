@@ -67,8 +67,6 @@
       font-size: get-size('300');
       color: get-color('primary');
       justify-self: flex-start;
-      margin: 0;
-      padding-left: 0;
 
       &:hover {
         border-bottom: 1px solid get-color('primary');
