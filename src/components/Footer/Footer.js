@@ -19,42 +19,34 @@ class Footer extends Component {
         }
 
         return (
-            <footer className="footer grid-row pad-top-500">
-                <div className="grid-layout alignwide contact">
-                    <div className="block">
+            <Grid className="footer pad-top-600">
+                <Row width="align-wide" className="contact pad-top-600">
+                    <Block colSpan={3}>
                         <h3>Contact</h3>
                         <p>{this.props.content.address}</p>
                         <a href="#">{this.props.content.email}</a>
                         <p>Tel: {this.props.content.telephone}</p>
-                    </div>
-                    <nav className="nav">
+                    </Block>
+                    <Block colSpan={3} className="nav">
                         <h3>{this.props.content.channelOneTitle}</h3>
                         <ul>
                             {navItems(1)}
                         </ul>
-                    </nav>
-                    <nav className="nav">
+                    </Block>
+                    <Block colSpan={3} className="nav">
                         <h3>{this.props.content.channelTwoTitle}</h3>
                         <ul>
                             {navItems(2)}
                         </ul>
-                    </nav>
-                    <div className="social">
+                    </Block>
+                    <Block colSpan={3} className="social">
                         <a href=""><i className="fab fa-instagram"></i></a>
                         <a href=""><i className="fab fa-twitter"></i></a>
                         <a href=""><i className="fab fa-linkedin"></i></a>
                         <a href=""><i className="fab fa-facebook"></i></a>
-                    </div>
-                </div>
-                <div className="grid-layout alignwide has-two-columns strapline">
-                    <div className="block">
-
-                    </div>
-                    <nav className="nav">
-
-                    </nav>
-                </div>
-            </footer>
+                    </Block>
+                </Row>
+            </Grid>
         );
     }
 }

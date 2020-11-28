@@ -14,7 +14,7 @@ class Location extends Component {
         return (
             <Grid>
                 <Row width="standard" className="pad-top-800 pad-bottom-800">
-                    <Block className="align-center">
+                    <Block colStart={3} colSpan={7} className="align-center">
                         <h2 className="h1">{this.props.content.title}</h2>
                         <h3>{this.props.content.contactNumber}</h3>
                         <a href='#' className={'button call-to-action'}>{this.props.content.buttonText}</a>

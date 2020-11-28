@@ -13,6 +13,7 @@
     text-decoration: none;
     border-bottom: 1px solid var(--light);
     transition: border ease-in 200ms;
+    color: var(--light);
   }
   &.standard{
     display: inline-block;

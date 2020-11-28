@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+### This is a test build of a new set of css principles.
+#### This branch focuses on trying to use JavaScript styled components
+I've leveraged **every layout** organisation ideas combined with my own styling. The idea is to test out the capabilities of creating styled components and altering them with props rather than traditional inheritance and cascade, I've done a few experiments with CSS applications in JavaScript Frameworks, & the component stuff looks like it could be quite powerful, but I'm unsure about it's effect on writing clean semantic markup.
+A interesting part of this project is gorko, which is used to rapidly create utility classes based on CSS variables, i need to integrate CSS with the JavaScript in a more cohesive way
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Pages are built upon the idea of grid rows, with the following structure.**
+```jsx
+<Grid>
+    <Row>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+    </Row>
+</Grid>
+```
+These styled components output as:
+```html
+<section>
+    <div>
+        <div><!-- --></div> 
+        <div><!-- --></div>  
+        <div><!-- --></div>  
+    </div>
+</section>
+```
+But they are also given uniquely generated class names 
+```html
+<section class="sc-bdfBwQ leQbdb">
+    <div class="sc-gsTCUz dYofo">
+        <div class="sc-dlfnbm hSorEq"><!-- --></div> 
+        <div class="sc-dlfnbm hdhgrR"><!-- --></div>  
+        <div class="sc-dlfnbm hSorEq"><!-- --></div>  
+    </div>
+</section>
+```
+By default the rows are standard width, however they can be altered with the `width` attribute.
+```jsx
+<Grid>
+    <Row width="narrow">
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+    </Row>
+    <Row width="standard">
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+    </Row>
+    <Row width="align-wide">
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+    </Row>
+    <Row width="align-full">
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+        <Block><!-- --></Block>
+    </Row>
+</Grid>
+```
+By default `<Blocks>` are full width, but they can be altered with various attributes
+```
+colStart={} / colSpan={} / rowStart={} / rowSpan={}
+```
+For example this would create a 3 column layout
+```jsx
+<Grid>
+    <Row>
+        <Block colSpan={4}><!-- --></Block>
+        <Block colSpan={4}><!-- --></Block>
+        <Block colSpan={4}><!-- --></Block>
+    </Row>
+</Grid>
+```

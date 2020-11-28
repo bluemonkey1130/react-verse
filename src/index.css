@@ -1063,6 +1063,7 @@ th {
   text-decoration: none;
   border-bottom: 1px solid var(--light);
   transition: border ease-in 200ms;
+  color: var(--light);
 }
 .button.standard {
   display: inline-block;
@@ -1268,7 +1269,7 @@ section.hero:after {
 .tabs button:hover {
   background-color: var(--primary-shade);
   border-bottom: 5px solid var(--primary);
-  color: var(--primary);
+  color: var(--light);
   text-decoration: none;
   transition-duration: 200ms;
   transition-property: all;
@@ -1352,77 +1353,66 @@ section.hero:after {
   padding: 1rem 2rem;
 }
 
-footer .grid-layout:nth-child(1) {
-  padding: 4rem 0;
+.footer:nth-child(2) {
+  padding: 1rem 0;
+}
+.footer .contact {
+  grid-gap: 1rem;
   border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary);
 }
-footer .grid-layout:nth-child(2) {
-  padding: 1rem 0;
-}
-footer .grid-layout.contact {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 1rem;
-}
-footer .grid-layout.contact .block h3 a:hover, footer .grid-layout.contact .nav h3 a:hover {
+.footer .contact .block h3 a:hover, .footer .contact .nav h3 a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .block {
-  grid-column: auto/span 1;
-}
-footer .grid-layout.contact .block p {
+.footer .contact .block p {
   font-size: 1rem;
 }
-footer .grid-layout.contact .nav {
-  grid-column: auto/span 1;
-}
-footer .grid-layout.contact .nav ul {
+.footer .contact .nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-footer .grid-layout.contact .nav ul li {
+.footer .contact .nav ul li {
   margin-bottom: 0.8rem;
 }
-footer .grid-layout.contact .nav ul li a {
+.footer .contact .nav ul li a {
   margin-top: 0;
   font-size: 1rem;
   color: var(--primary);
 }
-footer .grid-layout.contact .nav ul li a:hover {
+.footer .contact .nav ul li a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .social {
-  grid-column: auto/span 2;
+.footer .contact .social {
   display: flex;
   justify-content: flex-end;
 }
-footer .grid-layout.contact .social a {
+.footer .contact .social a {
   color: var(--primary);
   margin: 0 1rem;
 }
-footer .grid-layout.contact .social a:hover {
+.footer .contact .social a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .social a i {
+.footer .contact .social a i {
   font-size: 2rem;
 }
-footer .grid-layout.strapline .block p {
+.footer .strapline .block p {
   font-size: 0.8rem;
   margin-bottom: 0;
 }
-footer .grid-layout.strapline .nav {
+.footer .strapline .nav {
   display: flex;
   justify-content: flex-end;
 }
-footer .grid-layout.strapline .nav a {
+.footer .strapline .nav a {
   margin: 0 1rem;
   font-size: 0.8rem;
 }
-footer .grid-layout.strapline .nav a:hover {
+.footer .strapline .nav a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.strapline .nav a:nth-last-child(1) {
+.footer .strapline .nav a:nth-last-child(1) {
   margin-right: 0;
 }
 
