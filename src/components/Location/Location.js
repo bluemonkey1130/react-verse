@@ -13,10 +13,12 @@ class Location extends Component {
         return (
             <section className="grid-row">
                 <div className="grid pad-top-900 pad-bottom-900">
-                    <div className="align-center">
-                        <h2 className="h1">{this.props.content.title}</h2>
-                        <h3>{this.props.content.contactNumber}</h3>
-                        <a href='#' className={'button call-to-action'}>{this.props.content.buttonText}</a>
+                    <div className="center-large">
+                        <div className="stack align-center">
+                            <h2 className="h1">{this.props.content.title}</h2>
+                            <h3>{this.props.content.contactNumber}</h3>
+                            <a href='#' className={'button call-to-action'}>{this.props.content.buttonText}</a>
+                        </div>
                     </div>
                 </div>
                 <div className="map grid align-wide">

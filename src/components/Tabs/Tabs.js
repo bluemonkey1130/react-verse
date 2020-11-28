@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
 
-
 class Tabs extends Component {
 
     render() {

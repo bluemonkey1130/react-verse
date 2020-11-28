@@ -2,7 +2,7 @@ section.hero {
   grid-template-rows: 1fr 50px;
   position: relative;
 
-  &>div {
+  .grid {
     &.slider {
       grid-row: 1;
       z-index: 2;
@@ -17,6 +17,7 @@ section.hero {
         .slick-list {
           .slick-slide {
             z-index: 5;
+
             div {
               margin: 0 auto;
               z-index: 2;
@@ -46,14 +47,16 @@ section.hero {
       z-index: 2;
 
       .slick-slider {
-        .slick-slide{
+        .slick-slide {
           &.slick-current {
-            .tab-link{
+            .tab-link {
               button {
                 color: var(--light);
+
                 span {
                   color: var(--tertiary);
                 }
+
                 &:after {
                   left: 0;
                   right: auto;
@@ -63,6 +66,7 @@ section.hero {
             }
           }
         }
+
         .tab-link {
           align-items: center;
           cursor: pointer;
@@ -90,7 +94,7 @@ section.hero {
             }
 
             &:after {
-              background:var(--tertiary);
+              background: var(--tertiary);
               bottom: 0;
               content: "";
               height: 5px;

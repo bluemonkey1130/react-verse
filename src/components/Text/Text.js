@@ -1,5 +1,4 @@
 import React from 'react';
-import {Block, Grid, Row} from "../Grid/Grid";
 
 const Text = (props) => {
 

@@ -2459,18 +2459,16 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
 }
 
 .button {
-  display: inline-block;
-  font-size: var(--size-400);
-  font-family: "leikoregular", sans-serif;
   border-bottom: 1px solid transparent;
-  transition: border ease-in 200ms;
-  text-decoration: none;
+  box-sizing: content-box;
   cursor: pointer;
+  display: inline-block;
+  font-family: "leikoregular", sans-serif;
+  font-size: var(--size-400);
   margin-left: auto;
   margin-right: auto;
-  /* ↓ Remove padding from the width calculation */
-  box-sizing: content-box;
-  /* ↓ The maximum width is the maximum measure */
+  text-decoration: none;
+  transition: border ease-in 200ms;
   width: calc(var(--measure) / 4);
 }
 .button:hover {
@@ -2485,7 +2483,7 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
 }
 .button.standard {
   display: inline-block;
-  text-align: center;
+  text-align: left;
 }
 .button.standard:after {
   display: inline;
@@ -2543,61 +2541,61 @@ section.hero {
   grid-template-rows: 1fr 50px;
   position: relative;
 }
-section.hero > div.slider {
+section.hero .grid.slider {
   grid-row: 1;
   z-index: 2;
 }
-section.hero > div.slider .slick-slider {
+section.hero .grid.slider .slick-slider {
   align-items: center;
   display: flex;
   text-align: center;
   justify-content: center;
   padding: 4rem 0;
 }
-section.hero > div.slider .slick-slider .slick-list .slick-slide {
+section.hero .grid.slider .slick-slider .slick-list .slick-slide {
   z-index: 5;
 }
-section.hero > div.slider .slick-slider .slick-list .slick-slide div {
+section.hero .grid.slider .slick-slider .slick-list .slick-slide div {
   margin: 0 auto;
   z-index: 2;
   text-align: center;
 }
-section.hero > div.slider .slick-slider .slick-list .slick-slide div:focus {
+section.hero .grid.slider .slick-slider .slick-list .slick-slide div:focus {
   outline: none;
 }
-section.hero > div.slider .slick-slider .slick-list .slick-slide div h1, section.hero > div.slider .slick-slider .slick-list .slick-slide div p {
+section.hero .grid.slider .slick-slider .slick-list .slick-slide div h1, section.hero .grid.slider .slick-slider .slick-list .slick-slide div p {
   color: var(--light);
 }
-section.hero > div.slider .slick-slider .slick-list .slick-slide div .button {
+section.hero .grid.slider .slick-slider .slick-list .slick-slide div .button {
   margin-top: 4rem;
   color: var(--light);
 }
-section.hero > div.slider-nav {
+section.hero .grid.slider-nav {
   align-self: end;
   grid-row: 2;
   z-index: 2;
 }
-section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button {
+section.hero .grid.slider-nav .slick-slider .slick-slide.slick-current .tab-link button {
   color: var(--light);
 }
-section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button span {
+section.hero .grid.slider-nav .slick-slider .slick-slide.slick-current .tab-link button span {
   color: var(--tertiary);
 }
-section.hero > div.slider-nav .slick-slider .slick-slide.slick-current .tab-link button:after {
+section.hero .grid.slider-nav .slick-slider .slick-slide.slick-current .tab-link button:after {
   left: 0;
   right: auto;
   width: 100%;
 }
-section.hero > div.slider-nav .slick-slider .tab-link {
+section.hero .grid.slider-nav .slick-slider .tab-link {
   align-items: center;
   cursor: pointer;
   display: inherit;
   text-align: center;
 }
-section.hero > div.slider-nav .slick-slider .tab-link:focus, section.hero > div.slider-nav .slick-slider .tab-link:active {
+section.hero .grid.slider-nav .slick-slider .tab-link:focus, section.hero .grid.slider-nav .slick-slider .tab-link:active {
   outline: none;
 }
-section.hero > div.slider-nav .slick-slider .tab-link button {
+section.hero .grid.slider-nav .slick-slider .tab-link button {
   background-color: transparent;
   border-radius: 0;
   border: none;
@@ -2609,10 +2607,10 @@ section.hero > div.slider-nav .slick-slider .tab-link button {
   padding-bottom: 3rem;
   position: relative;
 }
-section.hero > div.slider-nav .slick-slider .tab-link button:focus, section.hero > div.slider-nav .slick-slider .tab-link button:active {
+section.hero .grid.slider-nav .slick-slider .tab-link button:focus, section.hero .grid.slider-nav .slick-slider .tab-link button:active {
   outline: none;
 }
-section.hero > div.slider-nav .slick-slider .tab-link button:after {
+section.hero .grid.slider-nav .slick-slider .tab-link button:after {
   background: var(--tertiary);
   bottom: 0;
   content: "";
@@ -2625,13 +2623,13 @@ section.hero > div.slider-nav .slick-slider .tab-link button:after {
   width: 0;
   z-index: -1;
 }
-section.hero > div.slider-nav .slick-slider .tab-link:hover button {
+section.hero .grid.slider-nav .slick-slider .tab-link:hover button {
   color: var(--light);
 }
-section.hero > div.slider-nav .slick-slider .tab-link:hover button span {
+section.hero .grid.slider-nav .slick-slider .tab-link:hover button span {
   color: var(--tertiary);
 }
-section.hero > div.media {
+section.hero .grid.media {
   grid-row: 1/span 2;
   height: 90vh;
   max-height: 800px;

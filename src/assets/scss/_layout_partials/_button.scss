@@ -1,16 +1,14 @@
 .button {
-  display: inline-block;
-  font-size: var(--size-400);
-  font-family: $headings-font-family;
   border-bottom: 1px solid transparent;
-  transition: border ease-in 200ms;
-  text-decoration: none;
+  box-sizing: content-box;
   cursor: pointer;
+  display: inline-block;
+  font-family: $headings-font-family;
+  font-size: var(--size-400);
   margin-left: auto;
   margin-right: auto;
-  /* ↓ Remove padding from the width calculation */
-  box-sizing: content-box;
-  /* ↓ The maximum width is the maximum measure */
+  text-decoration: none;
+  transition: border ease-in 200ms;
   width: calc(var(--measure) / 4);
 
   &:hover{
@@ -25,7 +23,7 @@
   }
   &.standard{
     display: inline-block;
-    text-align: center;
+    text-align: left;
     &:after {
       display: inline;
       font-family: 'Font Awesome 5 Free';

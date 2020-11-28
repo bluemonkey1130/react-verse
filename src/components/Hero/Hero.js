@@ -21,7 +21,7 @@ class hero extends Component {
                 {
                     this.props.slides.map((slide, index) => {
                             return (
-                                <div key={slide.id}>
+                                <div className="center" key={slide.id}>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.content}</p>
                                     <a className="button standard" href='#'>{slide.buttonText}</a>
