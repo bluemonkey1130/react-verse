@@ -12,14 +12,14 @@
     cursor: pointer;
 
     &.filter-btn {
-      border-bottom: 5px solid get-color('grey');
+      border-bottom: 5px solid var(--grey);
       color: get-color('grey');
       padding: 1.5rem;
     }
 
     &.active {
-      border-bottom: 5px solid get-color('primary');
-      color: get-color('primary');
+      border-bottom: 5px solid var(--primary);
+      color: var(--primary);
       transition-duration: 200ms;
       transition-property: all;
       transition-timing-function: ease-out;
@@ -29,8 +29,8 @@
     }
 
     &:hover {
-      background-color: get-color('primary-shade');
-      border-bottom: 5px solid get-color('primary');
+      background-color: var(--primary-shade);
+      border-bottom: 5px solid var(--primary);
       color: get-color('primary');
       text-decoration: none;
       transition-duration: 200ms;
@@ -43,7 +43,7 @@
 .tab-content {
   > div {
     figure {
-      margin-bottom: get-size('400');
+      margin-bottom: var(--size-400);
       overflow: hidden;
       position: relative;
 
@@ -64,12 +64,12 @@
     }
 
     .button {
-      font-size: get-size('300');
-      color: get-color('primary');
+      font-size: var(--size-300);
+      color: var(--primary);
       justify-self: flex-start;
 
       &:hover {
-        border-bottom: 1px solid get-color('primary');
+        border-bottom: 1px solid var(--primary);
 
       }
     }

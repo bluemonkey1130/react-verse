@@ -58,7 +58,7 @@ class hero extends Component {
             </Slider>
         )
         return (
-            <Grid className={[classes.Hero, 'hero']}>
+            <Grid className={[classes.Hero, "hero"].join(' ')}>
                 <Row className={['slider']} align={['center']}>
                     {slides}
                 </Row>

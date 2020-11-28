@@ -5,7 +5,7 @@
 @import '../../../node_modules/gorko/gorko.scss';
 
 // Pull in modern reset
-@import 'reset';
+@import '_base/reset';
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
 
@@ -22,48 +22,18 @@ $phablet: 575px;
 $mobile: 480px;
 $smallmobile: 375px;
 
-// Global CSS starts
-body {
-  line-height: 1.5;
-  overflow-x: hidden;
-  padding-bottom: get-size('600');
-  @include apply-utility('weight', 'medium');
-}
 
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-}
-
-:focus {
-  outline: 2px dotted;
-  outline-offset: 0.25rem;
-}
 // Base
-@import 'base/typography';
-@import 'base/grid';
+@import '_base/typography';
 
-// Utilities
-@import 'utilities/flow';
-@import 'utilities/radius';
-@import 'utilities/splitter';
-@import 'utilities/wrapper';
-@import 'utilities/visually-hidden';
+// Layout Partials
+@import '_layout-partials/button';
+@import '_layout-partials/table-group';
 
-// Blocks
-@import 'blocks/button';
-@import 'blocks/key-header';
-@import 'blocks/pill';
-@import 'blocks/site-head';
-@import 'blocks/summary';
-@import 'blocks/table-group';
-@import 'blocks/user';
-@import 'blocks/hero';
-@import 'blocks/tabs';
-@import 'blocks/map';
-@import 'blocks/header';
-@import 'blocks/footer';
+
+// Layouts
+@import '_layouts/hero';
+@import '_layouts/tabs';
+@import '_layouts/map';
+@import '_layouts/header';
+@import '_layouts/footer';

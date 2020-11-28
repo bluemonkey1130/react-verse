@@ -28,12 +28,12 @@ section.hero {
               }
 
               h1, p {
-                color: get-color('light');
+                color: var(--light);
               }
 
               .button {
                 margin-top: 4rem;
-                color: get-color('light');
+                color: var(--light);
               }
             }
           }
@@ -52,9 +52,9 @@ section.hero {
           &.slick-current {
             .tab-link{
               button {
-                color: get-color('light');
+                color: var(--light);
                 span {
-                  color: get-color('tertiary');
+                  color: var(--tertiary);
                 }
                 &:after {
                   left: 0;
@@ -79,7 +79,7 @@ section.hero {
             background-color: transparent;
             border-radius: 0;
             border: none;
-            color: get-color('grey');
+            color: var(--grey);
             cursor: pointer;
             display: inline;
             font-size: 1.2rem;
@@ -92,7 +92,7 @@ section.hero {
             }
 
             &:after {
-              background: get-color('tertiary');
+              background: var(--tertiary);
               bottom: 0;
               content: "";
               height: 5px;
@@ -108,10 +108,10 @@ section.hero {
 
           &:hover {
             button {
-              color: get-color('light');
+              color: var(--light);
 
               span {
-                color: get-color('tertiary');
+                color: var(--tertiary);
               }
             }
           }
@@ -131,7 +131,8 @@ section.hero {
   }
 
   &:after {
-    background-color: rgba(get-color('primary'), 0.9);
+    background-color: var(--primary);
+    opacity: 0.9;
     content: '';
     height: 100%;
     left: 0;

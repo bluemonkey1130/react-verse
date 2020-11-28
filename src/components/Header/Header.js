@@ -10,8 +10,7 @@ class Header extends Component {
                 .filter(targetNav => targetNav.align === align)
                 .map((filteredNav, index) => {
                     return (
-                        <a
-                            key={filteredNav.id}
+                        <a key={filteredNav.id}
                             href="#"
                             className="nav-link">{filteredNav.navText}</a>
                     )
