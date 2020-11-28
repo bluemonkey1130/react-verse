@@ -58,19 +58,19 @@ class hero extends Component {
             </Slider>
         )
         return (
-            <Grid className={[classes.Hero, 'hero']}>
-                <Row className={['slider']} align={['center']}>
+            <section className="hero grid-row">
+                <div className="grid slider">
                     {slides}
-                </Row>
-                <Row className='slider-nav'>
+                </div>
+                <div className='grid slider-nav'>
                     {sliderNav}
-                </Row>
-                <Row width='align-wide' className={['media']}>
-                    <Block>
+                </div>
+                <div className="grid align-full media">
+                    <div>
                         <img src={heroImg} alt='logo'/>
-                    </Block>
-                </Row>
-            </Grid>
+                    </div>
+                </div>
+            </section>
         )
     }
 }

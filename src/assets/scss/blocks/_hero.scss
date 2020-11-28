@@ -13,7 +13,6 @@ section.hero {
         text-align: center;
         justify-content: center;
         padding: 4rem 0;
-        grid-column: 3 / span 8;
 
         .slick-list {
           .slick-slide {
@@ -28,12 +27,12 @@ section.hero {
               }
 
               h1, p {
-                color: get-color('light');
+                color: var(--light);
               }
 
               .button {
                 margin-top: 4rem;
-                color: get-color('light');
+                color: var(--light);
               }
             }
           }
@@ -47,14 +46,13 @@ section.hero {
       z-index: 2;
 
       .slick-slider {
-        grid-column: 3 / span 8;
         .slick-slide{
           &.slick-current {
             .tab-link{
               button {
-                color: get-color('light');
+                color: var(--light);
                 span {
-                  color: get-color('tertiary');
+                  color: var(--tertiary);
                 }
                 &:after {
                   left: 0;
@@ -79,7 +77,7 @@ section.hero {
             background-color: transparent;
             border-radius: 0;
             border: none;
-            color: get-color('grey');
+            color: var(--grey);
             cursor: pointer;
             display: inline;
             font-size: 1.2rem;
@@ -92,7 +90,7 @@ section.hero {
             }
 
             &:after {
-              background: get-color('tertiary');
+              background:var(--tertiary);
               bottom: 0;
               content: "";
               height: 5px;
@@ -108,10 +106,10 @@ section.hero {
 
           &:hover {
             button {
-              color: get-color('light');
+              color: var(--light);
 
               span {
-                color: get-color('tertiary');
+                color: var(--tertiary);
               }
             }
           }
@@ -120,10 +118,9 @@ section.hero {
     }
 
     &.media {
-      grid-column: 1 / span 14;
       grid-row: 1 / span 2;
       height: 90vh;
-      max-height: 85vh;
+      max-height: 800px;
       object-fit: cover;
       overflow: hidden;
       width: 100%;
@@ -131,7 +128,8 @@ section.hero {
   }
 
   &:after {
-    background-color: rgba(get-color('primary'), 0.9);
+    background-color: var(--primary);
+    opacity: 0.9;
     content: '';
     height: 100%;
     left: 0;

@@ -20,7 +20,7 @@ class Footer extends Component {
 
         return (
             <footer className="footer grid-row pad-top-500">
-                <div className="grid-layout alignwide contact">
+                <div className="grid alignwide contact">
                     <div className="block">
                         <h3>Contact</h3>
                         <p>{this.props.content.address}</p>
@@ -46,7 +46,7 @@ class Footer extends Component {
                         <a href=""><i className="fab fa-facebook"></i></a>
                     </div>
                 </div>
-                <div className="grid-layout alignwide has-two-columns strapline">
+                <div className="grid alignwide has-two-columns strapline">
                     <div className="block">
 
                     </div>
