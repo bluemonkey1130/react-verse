@@ -17,7 +17,6 @@ section.hero {
         .slick-list {
           .slick-slide {
             z-index: 5;
-
             div {
               margin: 0 auto;
               z-index: 2;
@@ -26,13 +25,10 @@ section.hero {
               &:focus {
                 outline: none;
               }
-
               h1, p {
                 color: var(--light);
               }
-
               .button {
-                margin-top: 4rem;
                 color: var(--light);
               }
             }

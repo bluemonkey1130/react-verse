@@ -2567,7 +2567,6 @@ section.hero .grid.slider .slick-slider .slick-list .slick-slide div h1, section
   color: var(--light);
 }
 section.hero .grid.slider .slick-slider .slick-list .slick-slide div .button {
-  margin-top: 4rem;
   color: var(--light);
 }
 section.hero .grid.slider-nav {
@@ -2678,7 +2677,7 @@ section.hero:after {
 .tabs button:hover {
   background-color: var(--primary-shade);
   border-bottom: 5px solid var(--primary);
-  color: var(--primary);
+  color: var(--light);
   text-decoration: none;
   transition-duration: 200ms;
   transition-property: all;

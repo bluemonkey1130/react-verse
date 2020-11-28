@@ -21,10 +21,10 @@ class hero extends Component {
                 {
                     this.props.slides.map((slide, index) => {
                             return (
-                                <div className="center" key={slide.id}>
+                                <div className="center-large" key={slide.id}>
                                     <h1>{slide.title}</h1>
                                     <p>{slide.content}</p>
-                                    <a className="button standard" href='#'>{slide.buttonText}</a>
+                                    <a className="button standard gap-top-400" href='#'>{slide.buttonText}</a>
                                 </div>
                             )
                         }
