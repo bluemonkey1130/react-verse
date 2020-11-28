@@ -1,5 +1,6 @@
 // First up: config
 @import 'config';
+@import 'utilities/low-specificity';
 
 // Next: pull in gorko for design tokens
 @import '../../../node_modules/gorko/gorko.scss';

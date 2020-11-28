@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react';
 import PropTypes from 'prop-types';
-import {Block, Grid, Row} from "../Grid/Grid";
 
 
 class Tabs extends Component {
@@ -11,14 +10,14 @@ class Tabs extends Component {
                 .filter(targetChannel => targetChannel.channel === channel)
                 .map((filteredChannel, index) => {
                     return (
-                        <Block key={filteredChannel.id} colSpan={4}>
+                        <div key={filteredChannel.id}>
                             <figure>
                                 <img src={filteredChannel.img} alt=""/>
                             </figure>
                             <h3>{filteredChannel.title}</h3>
                             <p>{filteredChannel.text}</p>
                             <a className="button standard" href="#">Link & Arrow</a>
-                        </Block>
+                        </div>
                     )
                 })
         }
@@ -39,25 +38,17 @@ class Tabs extends Component {
             default:
         }
         return (
-            <Fragment>
-                <Grid>
-                    <Row width={'narrow'} className="tabs">
-                        <Block colSpan={4}>
-                            <button className={tabOne} onClick={() => this.props.clicked(1)}>Channel One</button>
-                        </Block>
-                        <Block colSpan={4}>
-                            <button className={tabTwo} onClick={() => this.props.clicked(2)}>Channel Two</button>
-                        </Block>
-                        <Block colSpan={4}>
-                            <button className={tabThree} onClick={() => this.props.clicked(3)}>Channel Three
-                            </button>
-                        </Block>
-                    </Row>
-                    <Row width={'align-wide'} className="tab-content pad-top-800 pad-bottom-800">
-                        {tabsTemplate(this.props.visibleTab)}
-                    </Row>
-                </Grid>
-            </Fragment>
+            <section className="grid-row">
+                <div className="grid-layout narrow has-three-columns tabs">
+                        <button className={tabOne} onClick={() => this.props.clicked(1)}>Channel One</button>
+                        <button className={tabTwo} onClick={() => this.props.clicked(2)}>Channel Two</button>
+                        <button className={tabThree} onClick={() => this.props.clicked(3)}>Channel Three</button>
+                </div>
+                <div className="grid-layout has-three-columns tab-content pad-top-800 pad-bottom-800">
+                    {tabsTemplate(this.props.visibleTab)}
+                </div>
+            </section>
+
         )
     }
 }

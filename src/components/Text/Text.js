@@ -4,15 +4,15 @@ import {Block, Grid, Row} from "../Grid/Grid";
 const Text = (props) => {
 
     return (
-        <Grid>
-            <Row width={'narrow'} className={'pad-top-800 pad-bottom-800 align-center'}>
-                <Block>
+        <section className="grid-row">
+            <div className="grid pad-900 align-center">
+                <div>
                     <h2 className={'h1'}>{props.content.title}</h2>
                     <p>{props.content.text}</p>
                     <a href='#' className={'button call-to-action'}>{props.content.buttonText}</a>
-                </Block>
-            </Row>
-        </Grid>
+                </div>
+            </div>
+        </section>
     );
 }
 

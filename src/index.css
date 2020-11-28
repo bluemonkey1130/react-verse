@@ -29,6 +29,11 @@
   --flow-space: var(--size-800);
 }
 
+@supports (display: grid) {
+  .grid-row, .grid, .grid-layout {
+    grid-gap: var(--grid-gap);
+  }
+}
 .bg-primary {
   background: var(--primary);
 }
@@ -1082,6 +1087,10 @@ th {
     position: relative;
   }
 
+  .grid.narrow, .grid-layout.narrow {
+    grid-column-start: 4;
+    grid-column-end: 12;
+  }
   .grid.align-wide, .grid-layout.align-wide {
     grid-column-start: 2;
     grid-column-end: 14;

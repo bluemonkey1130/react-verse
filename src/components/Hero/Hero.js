@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-import {Row, Block, Grid} from "../Grid/Grid";
-import classes from './Hero.module.scss';
 import heroImg from '../../assets/images/hero.jpg';
 import Slider from "react-slick";
 
@@ -45,12 +43,12 @@ class hero extends Component {
                 {
                     this.props.slides.map((slide, index) => {
                             return (
-                                <Block
+                                <div
                                     key={slide.id}
                                     colSpan={4}
                                     className='tab-link'>
                                     <button><span>{slide.id}.</span> {slide.tabTitle}</button>
-                                </Block>
+                                </div>
                             )
                         }
                     )

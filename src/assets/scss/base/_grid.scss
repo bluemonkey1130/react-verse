@@ -11,6 +11,10 @@
     position: relative;
   }
   .grid, .grid-layout {
+    &.narrow {
+      grid-column-start: 4;
+      grid-column-end: 12;
+    }
     &.align-wide {
       grid-column-start: 2;
       grid-column-end: 14;
