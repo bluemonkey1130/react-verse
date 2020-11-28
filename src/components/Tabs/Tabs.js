@@ -14,7 +14,7 @@ class Tabs extends Component {
                             <figure>
                                 <img src={filteredChannel.img} alt=""/>
                             </figure>
-                            <h3>{filteredChannel.title}</h3>
+                            <h4>{filteredChannel.title}</h4>
                             <p>{filteredChannel.text}</p>
                             <a className="button standard" href="#">Link & Arrow</a>
                         </div>
@@ -39,12 +39,12 @@ class Tabs extends Component {
         }
         return (
             <section className="grid-row">
-                <div className="grid-layout narrow has-three-columns tabs">
+                <div className="tabs grid-layout narrow has-three-columns pad-bottom-900">
                         <button className={tabOne} onClick={() => this.props.clicked(1)}>Channel One</button>
                         <button className={tabTwo} onClick={() => this.props.clicked(2)}>Channel Two</button>
                         <button className={tabThree} onClick={() => this.props.clicked(3)}>Channel Three</button>
                 </div>
-                <div className="grid-layout has-three-columns tab-content pad-top-800 pad-bottom-800">
+                <div className="tab-content grid-layout has-three-columns pad-bottom-900">
                     {tabsTemplate(this.props.visibleTab)}
                 </div>
             </section>

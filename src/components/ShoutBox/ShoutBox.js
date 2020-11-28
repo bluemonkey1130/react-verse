@@ -1,23 +1,22 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Block, Grid, Row} from "../Grid/Grid";
 
 class ShoutBox extends Component {
 
     render() {
         return (
-            <Grid className="bg-primary pad-top-800 pad-bottom-800">
-                <Row width={'align-wide'} gridGap={4}>
-                    <Block colSpan={6}>
+            <section className="grid-row bg-primary pad-top-900 pad-bottom-900">
+                <div className="grid align-wide grid-gap-900">
+                    <div className="frame">
                         <img src={this.props.content.img} alt=""/>
-                    </Block>
-                    <Block colSpan={6} className="align-left">
-                        <h2 className="h1 color-light">{this.props.content.title}</h2>
+                    </div>
+                    <div>
+                        <h2 className="color-light">{this.props.content.title}</h2>
                         <p className="color-light">{this.props.content.text}</p>
                         <a className="button standard color-light" href="#">{this.props.content.buttonText}</a>
-                    </Block>
-                </Row>
-            </Grid>
+                    </div>
+                </div>
+            </section>
         );
     }
 }

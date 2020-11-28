@@ -2,9 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 5;
-  background-color: get-color('light');
-  grid-template-columns: 1fr 150px 1fr;
-  grid-template-rows: 1fr;
+  background-color: var(--light);
+  margin-bottom: 0;
 
 
   nav {
@@ -20,6 +19,7 @@
       align-items: center;
       font-family: $headings-font-family;
       text-decoration: none;
+
       p {
         margin: 0;
       }
@@ -27,7 +27,7 @@
       &:hover {
         text-decoration: none;
         transition: border ease-in 200ms;
-        border-bottom: 5px solid get-color('tertiary');
+        border-bottom: 5px solid var(--tertiary);
       }
     }
   }
@@ -41,7 +41,7 @@
     }
 
     .fas {
-      background: get-color('primary-shade');
+      background: var(--primary-shade);
       margin: 2rem auto;
       padding: 1rem 2rem;
     }

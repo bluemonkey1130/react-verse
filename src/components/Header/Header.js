@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Block, Grid, Row} from "../Grid/Grid";
 
 class Header extends Component {
 
@@ -20,25 +19,19 @@ class Header extends Component {
 
 
         return (
-            <Grid className="header">
-                <Row width='align-wide'>
-                    <Block colSpan={5}>
-                        <nav className="nav">
-                            {navItems('left')}
-                        </nav>
-                    </Block>
-                    <Block colSpan={2}>
-                        <a href="#" className="logo">
-                            <i className="fas fa-image"></i>
-                        </a>
-                    </Block>
-                    <Block colSpan={5}>
-                        <nav className="nav">
-                            {navItems('right')}
-                        </nav>
-                    </Block>
-                </Row>
-            </Grid>
+            <section className="grid-row header">
+                <div className="grid align-wide has-three-columns">
+                    <nav className="nav">
+                        {navItems('left')}
+                    </nav>
+                    <a href="#" className="logo">
+                        <i className="fas fa-image"></i>
+                    </a>
+                    <nav className="nav">
+                        {navItems('right')}
+                    </nav>
+                </div>
+            </section>
         );
     }
 }

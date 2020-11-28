@@ -25,7 +25,7 @@
   --size-800: 3rem;
   --size-900: 3.6rem;
   --measure: 60ch;
-  --grid-gap: var(--size-500);
+  --grid-gap: var(--size-600);
   --flow-space: var(--size-800);
 }
 
@@ -959,10 +959,6 @@ picture {
 }
 
 /* Natural flow and rhythm in articles by default */
-article > * + * {
-  margin-top: 1em;
-}
-
 /* Inherit fonts for inputs and buttons */
 input,
 button,
@@ -992,19 +988,7 @@ body {
   line-height: 1.5;
   overflow-x: hidden;
   padding-bottom: var(--size-600);
-}
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-}
-
-:focus {
-  outline: 2px dotted;
-  outline-offset: 0.25rem;
+  color: var(--primary);
 }
 
 @font-face {
@@ -1082,7 +1066,7 @@ th {
     grid-auto-rows: minmax(min-content, max-content);
     grid-template-columns: [full-start] minmax(calc(calc(100% - 1500px) / 2), 1fr) [main-start] repeat(12, [col-start] 1fr) [main-end] minmax(calc(calc(100% - 1500px) / 2), 1fr) [full-end];
     grid-template-rows: auto;
-    margin: 0 auto var(--gridsize) auto;
+    margin: 0 auto var(--grid-gap) auto;
     max-width: calc(var(--measure) * 5);
     position: relative;
   }
@@ -2149,12 +2133,191 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
   }
 }
 
+.radius {
+  border-radius: 0.5rem;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.table-group {
+  border: 1px solid var(--grey);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-group h3 {
+  --flow-space: var(--size-400);
+}
+.table-group table {
+  --flow-space: 0.2rem;
+  width: 100%;
+  min-width: 30rem;
+}
+.table-group td,
+.table-group h3 {
+  padding: 0.5rem 1rem;
+}
+.table-group tr:first-child {
+  border-top: 1px solid var(--grey);
+}
+.table-group tr:nth-child(odd) td {
+  background: var(--light);
+}
+.table-group td:nth-child(3) {
+  text-align: right;
+}
+
 .flow > * + * {
   margin-top: var(--flow-space, 1rem);
 }
 
-.radius {
-  border-radius: 0.5rem;
+/* ↓ No need for an additional, outer wrapping element */
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  --space: 1rem;
+  overflow: hidden;
+}
+.cluster > img {
+  margin: 0;
+}
+
+.cluster > * {
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ multiply by -1 to negate the halved value */
+  margin: calc(var(--space) / 2 * -1);
+}
+
+.cluster > * > * {
+  /* ↓ half the value, because of the 'doubling up' */
+  margin: calc(var(--space) / 2);
+}
+
+.with-sidebar {
+  overflow: hidden;
+}
+
+.with-sidebar > * {
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--size-500) / 2 * -1);
+}
+
+.with-sidebar > * > * {
+  margin: calc(var(--size-500) / 2);
+  flex-basis: 2rem;
+  flex-grow: 1;
+}
+
+.with-sidebar > * > :first-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-width: calc(50% - var(--size-500));
+}
+
+.with-sidebar > * > :last-child {
+  margin: calc(var(--size-500) / 2);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.stack > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.stack > * + * {
+  margin-top: var(--size-500);
+}
+
+.stack-small > * + * {
+  margin-top: 0.5rem;
+}
+
+.stack-large > * + * {
+  margin-top: 1.2rem;
+}
+
+.box {
+  --border-thin: 1px;
+  /* ↓ Padding set to the first point on the modular scale */
+  padding: var(--size-500);
+  /* ↓ Assumes you have a --border-thin var */
+  border: var(--border-thin) solid;
+  /* ↓ Always apply the transparent outline, for high contrast mode */
+  outline: var(--border-thin) transparent;
+  outline-offset: calc(var(--border-thin) * -1);
+  color: var(--dark);
+  background-color: var(--light);
+}
+
+.box * {
+  /* ↓ Force colors to inherit from the parent
+  and honor inversion (below) */
+  color: inherit;
+}
+.box *:nth-last-child(1):not(.button) {
+  margin-bottom: 0;
+}
+
+.box.invert {
+  /* ↓ The color vars inverted */
+  color: var(--light);
+  background-color: var(--primary);
+}
+
+.center {
+  /* ↓ Remove padding from the width calculation */
+  box-sizing: content-box;
+  /* ↓ The maximum width is the maximum measure */
+  max-width: calc(var(--measure)*1);
+  /* ↓ Only affect horizontal margins */
+  margin-left: auto;
+  margin-right: auto;
+}
+.center-large {
+  max-width: calc(var(--measure)*1.5);
+  /* ↓ Only affect horizontal margins */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.frame {
+  --n: 6;
+  --d: 9;
+  padding-bottom: calc(var(--n) / var(--d) * 100%);
+  position: relative;
+}
+
+.frame > * {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.frame > img,
+.frame > video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .splitter > :last-child {
@@ -2174,6 +2337,120 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
   }
 }
 
+.switcher > * {
+  /* ↓ The space value; the first point on the modular scale */
+  --space: var(--size-400);
+  /* ↓ Establish the flex context and allow wrapping */
+  display: flex;
+  flex-wrap: wrap;
+  /* ↓ Negate the margin to follow
+  (`* -1` makes the value negative) */
+  margin: calc((var(--space) / 2) * -1);
+}
+
+.switcher > * > * {
+  /* ↓ Allow growing, to take up available space */
+  flex-grow: 1;
+  /* ↓ Create the container-based breakpoint
+  (returns a negative or (large) positive value */
+  flex-basis: calc((var(--measure) - (100% - var(--space))) * 999);
+  /* ↓ Half margins meet to make the whole space value together */
+  margin: calc(var(--space) / 2);
+}
+
+.switcher > * > :nth-last-child(n+5),
+.switcher > * > :nth-last-child(n+5) ~ * {
+  /* Switch to a vertical configuration if
+  there are more than 4 child elements */
+  flex-basis: 100%;
+}
+
+.switcher > * > :nth-child(1) {
+  flex-grow: 2;
+}
+
+.cover {
+  --space: var(--size-500);
+  /* ↓ Establish a columnal flex context */
+  display: flex;
+  flex-direction: column;
+  /* ↓ Set a minimum height to match the viewport height
+  (any minimum would be fine) */
+  min-height: 100vh;
+  /* Set a padding value */
+  padding: var(--space);
+  max-width: unset;
+}
+
+.cover > * {
+  /* ↓ Give each child a top and bottom margin */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  max-width: unset;
+}
+
+.cover > :first-child:not(h1) {
+  /* ↓ Remove the top margin from the first-child
+  if it _doesn't_ match the centered element */
+  margin-top: 0;
+}
+
+.cover > :last-child:not(h1) {
+  /* ↓ Remove the bottom margin from the last-child
+  if it _doesn't_ match the centered element */
+  margin-bottom: 0;
+}
+
+.cover > h1 {
+  /* ↓ Center the centered element (h1 here)
+  in the available vertical space */
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.reel {
+  /* ↓ Custom properties for ease of adjustment */
+  --space: var(--size-500);
+  --reel-height: auto;
+  --item-width: calc(var(--measure)/2);
+  display: flex;
+  height: var(--reel-height);
+  /* ↓ Overflow */
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* ↓ For Firefox */
+  scrollbar-color: var(--color-light) var(--color-dark);
+}
+.reel img {
+  max-width: calc(var(--measure)*1.5);
+}
+
+.reel > * {
+  /*
+  ↓ Just a `width` wouldn’t work because
+  `flex-shrink: 1` (default) still applies
+  */
+  flex: 0 0 var(--item-width);
+}
+
+.reel > * + * {
+  margin-left: var(--space);
+}
+
+.reel.overflowing {
+  /* ↓ Only apply if there is a scrollbar (see the JavaScript) */
+  padding-bottom: var(--space);
+}
+
+/* ↓ Hide scrollbar with `no-bar` class */
+.reel.no-bar {
+  scrollbar-width: none;
+}
+
+.reel.no-bar::-webkit-scrollbar {
+  display: none;
+}
+
 .wrapper {
   max-width: 75rem;
   margin-left: auto;
@@ -2181,37 +2458,34 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
   padding: 0 var(--size-500);
 }
 
-.visually-hidden {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: auto;
-  margin: 0;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  width: 1px;
-  white-space: nowrap;
-}
-
 .button {
   display: inline-block;
-  margin: 1rem 0 0 0;
-  font-size: 1.2rem;
+  font-size: var(--size-400);
   font-family: "leikoregular", sans-serif;
   border-bottom: 1px solid transparent;
   transition: border ease-in 200ms;
   text-decoration: none;
-}
-.button:focus {
-  outline: none;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+  /* ↓ Remove padding from the width calculation */
+  box-sizing: content-box;
+  /* ↓ The maximum width is the maximum measure */
+  width: calc(var(--measure) / 4);
 }
 .button:hover {
   text-decoration: none;
-  border-bottom: 1px solid var(--light);
-  transition: border ease-in 200ms;
+}
+.button:focus {
+  outline-offset: 0.4rem;
+  outline: 1px dotted;
+}
+.button:active {
+  transform: scale(0.95);
 }
 .button.standard {
   display: inline-block;
+  text-align: center;
 }
 .button.standard:after {
   display: inline;
@@ -2220,42 +2494,33 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
   font-weight: 900;
   padding: 0 5px 5px 0;
 }
-.button.call-to-action {
+.button.standard:hover {
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+  transition: border ease-in 200ms;
+}
+.button.call-to-action, input.button[type=submit] {
   display: inline-block;
   color: var(--light);
   background-size: 100% 100%;
   text-decoration: none;
   padding: 0.6rem 2rem;
   cursor: pointer;
-  background: var(--primary);
+  background-color: var(--primary);
   text-align: center;
-  transition: all ease-in 200ms;
-  justify-self: center;
+  transition: background-color ease-in 200ms;
 }
-.button.call-to-action:hover {
+.button.call-to-action:hover, input.button[type=submit]:hover {
+  background-color: var(--primary-shade);
   color: var(--light);
-  transition: all ease-in 200ms;
+  transition: background-color ease-in 200ms;
 }
-.button.call-to-action:after {
+.button.call-to-action:after, input.button[type=submit]:after {
   content: "";
 }
 
-.key-header {
-  align-items: flex-end;
-}
-.key-header > :last-child {
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--size-300);
-}
-.key-header > :last-child > * {
-  flex-shrink: 0;
-  margin: 0.2rem 0 0 0.2rem;
-}
-@media (min-width: 48em) {
-  .key-header > :last-child {
-    justify-content: flex-end;
-  }
+input[type=submit] {
+  border-style: none;
 }
 
 .pill {
@@ -2272,65 +2537,6 @@ html.no-cssgrid .grid-row .grid-layout.has-six-columns > *:nth-child(6n+6), html
 }
 [lang*=en] .pill {
   text-transform: capitalize;
-}
-
-.site-head {
-  padding: 0.8rem 0;
-}
-.site-head__inner {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-.site-head h1 {
-  margin: 0.5rem 1rem 0.5rem 0;
-}
-
-.summary {
-  padding: var(--size-500) var(--size-500) var(--size-600) var(--size-500);
-  line-height: 1.1;
-}
-.summary dl,
-.summary dt {
-  --flow-space: var(--size-700);
-}
-.summary dd {
-  --flow-space: var(--size-300);
-}
-
-.table-group {
-  border: 1px solid var(--grey);
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-.table-group h3 {
-  --flow-space: var(--size-600);
-}
-.table-group table {
-  --flow-space: 0.2rem;
-  width: 100%;
-  min-width: 30rem;
-}
-.table-group td,
-.table-group h3 {
-  padding: 0.5rem 1rem;
-}
-.table-group tr:first-child {
-  border-top: 1px solid var(--grey);
-}
-.table-group td:nth-child(3) {
-  text-align: right;
-}
-
-.user {
-  display: inline-grid;
-  align-items: center;
-  grid-template-columns: max-content 50px;
-  grid-gap: var(--size-300);
-}
-.user img {
-  border-radius: 100%;
 }
 
 section.hero {
@@ -2522,8 +2728,7 @@ section.hero:after {
   top: 0;
   z-index: 5;
   background-color: var(--light);
-  grid-template-columns: 1fr 150px 1fr;
-  grid-template-rows: 1fr;
+  margin-bottom: 0;
 }
 .header nav {
   grid-row: 1;
@@ -2560,77 +2765,71 @@ section.hero:after {
   padding: 1rem 2rem;
 }
 
-footer .grid-layout:nth-child(1) {
-  padding: 4rem 0;
+footer .grid.contact {
   border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary);
-}
-footer .grid-layout:nth-child(2) {
-  padding: 1rem 0;
-}
-footer .grid-layout.contact {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 1rem;
 }
-footer .grid-layout.contact .block h3 a:hover, footer .grid-layout.contact .nav h3 a:hover {
+footer .grid.contact .block h3 a:hover, footer .grid.contact .nav h3 a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .block {
+footer .grid.contact .block {
   grid-column: auto/span 1;
 }
-footer .grid-layout.contact .block p {
+footer .grid.contact .block p {
   font-size: 1rem;
 }
-footer .grid-layout.contact .nav {
+footer .grid.contact .nav {
   grid-column: auto/span 1;
 }
-footer .grid-layout.contact .nav ul {
+footer .grid.contact .nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-footer .grid-layout.contact .nav ul li {
+footer .grid.contact .nav ul li {
   margin-bottom: 0.8rem;
 }
-footer .grid-layout.contact .nav ul li a {
+footer .grid.contact .nav ul li a {
   margin-top: 0;
   font-size: 1rem;
   color: var(--primary);
 }
-footer .grid-layout.contact .nav ul li a:hover {
+footer .grid.contact .nav ul li a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .social {
+footer .grid.contact .social {
   grid-column: auto/span 2;
   display: flex;
   justify-content: flex-end;
 }
-footer .grid-layout.contact .social a {
+footer .grid.contact .social a {
   color: var(--primary);
   margin: 0 1rem;
 }
-footer .grid-layout.contact .social a:hover {
+footer .grid.contact .social a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.contact .social a i {
+footer .grid.contact .social a i {
   font-size: 2rem;
 }
-footer .grid-layout.strapline .block p {
+footer .grid.strap-line .block p {
   font-size: 0.8rem;
   margin-bottom: 0;
 }
-footer .grid-layout.strapline .nav {
+footer .grid.strap-line .nav {
   display: flex;
   justify-content: flex-end;
 }
-footer .grid-layout.strapline .nav a {
+footer .grid.strap-line .nav a {
   margin: 0 1rem;
   font-size: 0.8rem;
 }
-footer .grid-layout.strapline .nav a:hover {
+footer .grid.strap-line .nav a:hover {
   border-bottom: 1px solid var(--primary);
 }
-footer .grid-layout.strapline .nav a:nth-last-child(1) {
+footer .grid.strap-line .nav a:nth-last-child(1) {
   margin-right: 0;
 }
 

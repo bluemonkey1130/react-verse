@@ -1,16 +1,15 @@
 footer {
-  .grid-layout {
+  .grid {
     &:nth-child(1) {
-      padding: 4rem 0;
-      border-top: 2px solid get-color('primary');
-      border-bottom: 2px solid get-color('primary');
+
     }
 
     &:nth-child(2) {
-      padding: 1rem 0;
     }
 
     &.contact {
+      border-top: 2px solid var(--primary);
+      border-bottom: 2px solid var(--primary);
       grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
       grid-gap: 1rem;
 
@@ -20,7 +19,7 @@ footer {
           a {
 
             &:hover {
-              border-bottom: 1px solid get-color('primary');
+              border-bottom: 1px solid var(--primary);
             }
           }
         }
@@ -48,10 +47,10 @@ footer {
             a {
               margin-top: 0;
               font-size: 1rem;
-              color: get-color('primary');
+              color: var(--primary);
 
               &:hover {
-                border-bottom: 1px solid get-color('primary');
+                border-bottom: 1px solid var(--primary);
               }
             }
           }
@@ -64,11 +63,11 @@ footer {
         justify-content: flex-end;
 
         a {
-          color: get-color('primary');
+          color: var(--primary);
           margin: 0 1rem;
 
           &:hover {
-            border-bottom: 1px solid get-color('primary');
+            border-bottom: 1px solid var(--primary);
           }
 
           i {
@@ -79,7 +78,7 @@ footer {
       }
     }
 
-    &.strapline {
+    &.strap-line {
       .block {
         p {
           font-size: 0.8rem;
@@ -96,7 +95,7 @@ footer {
           font-size: 0.8rem;
 
           &:hover {
-            border-bottom: 1px solid get-color('primary');
+            border-bottom: 1px solid var(--primary);
           }
 
           &:nth-last-child(1) {

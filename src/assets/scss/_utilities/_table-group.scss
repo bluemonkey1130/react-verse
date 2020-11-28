@@ -3,12 +3,12 @@
 // You can mess around with responsive tables, but I think that’s a lot of effort for not much return.
 // Instead, if you hide overflow and set a min-width, the data in the tables remains as intended and the user can swipe to see it.
 .table-group {
-  border: 1px solid get-color('grey');
+  border: 1px solid var(--grey);
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 
   h3 {
-    --flow-space: #{get-size('600')};
+    --flow-space: var(--size-400);
   }
 
   table {
@@ -24,11 +24,11 @@
   }
 
   tr:first-child {
-    border-top: 1px solid get-color('grey');
+    border-top: 1px solid var(--grey);
   }
 
   tr:nth-child(odd) td {
-    background: get-color('light-shade');
+    background: var(--light);
   }
 
   td:nth-child(3) {

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import {Block, Grid, Row} from "../Grid/Grid";
 
 class Footer extends Component {
 
@@ -19,22 +18,22 @@ class Footer extends Component {
         }
 
         return (
-            <footer className="footer grid-row pad-top-500">
-                <div className="grid alignwide contact">
+            <footer className="grid-row footer">
+                <div className="grid align-wide has-five-columns contact pad-top-600 pad-bottom-600">
                     <div className="block">
-                        <h3>Contact</h3>
+                        <h4>Contact</h4>
                         <p>{this.props.content.address}</p>
                         <a href="#">{this.props.content.email}</a>
                         <p>Tel: {this.props.content.telephone}</p>
                     </div>
                     <nav className="nav">
-                        <h3>{this.props.content.channelOneTitle}</h3>
+                        <h4>{this.props.content.channelOneTitle}</h4>
                         <ul>
                             {navItems(1)}
                         </ul>
                     </nav>
                     <nav className="nav">
-                        <h3>{this.props.content.channelTwoTitle}</h3>
+                        <h4>{this.props.content.channelTwoTitle}</h4>
                         <ul>
                             {navItems(2)}
                         </ul>
@@ -46,7 +45,7 @@ class Footer extends Component {
                         <a href=""><i className="fab fa-facebook"></i></a>
                     </div>
                 </div>
-                <div className="grid alignwide has-two-columns strapline">
+                <div className="grid align-wide strap-line">
                     <div className="block">
 
                     </div>

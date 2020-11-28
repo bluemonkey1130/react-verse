@@ -1,12 +1,12 @@
 // First up: config
 @import 'config';
-@import 'utilities/low-specificity';
+@import '_utilities/low-specificity';
 
 // Next: pull in gorko for design tokens
 @import '../../../node_modules/gorko/gorko.scss';
 
 // Pull in modern reset
-@import 'reset';
+@import '_base/reset';
 @import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
 
 
@@ -29,42 +29,37 @@ body {
   overflow-x: hidden;
   padding-bottom: get-size('600');
   @include apply-utility('weight', 'medium');
+  color: var(--primary);
 }
 
-
-table {
-  border-collapse: collapse;
-}
-
-th {
-  text-align: left;
-}
-
-:focus {
-  outline: 2px dotted;
-  outline-offset: 0.25rem;
-}
 // Base
-@import 'base/typography';
-@import 'base/grid';
+@import '_base/typography';
+@import '_base/grid';
 
 // Utilities
-@import 'utilities/flow';
-@import 'utilities/radius';
-@import 'utilities/splitter';
-@import 'utilities/wrapper';
-@import 'utilities/visually-hidden';
+@import '_utilities/radius';
+@import '_utilities/visually-hidden';
+@import '_utilities/table-group';
+
+// Layout Partials
+@import '_layout_partials/flow';
+@import '_layout_partials/the_cluster';
+@import '_layout_partials/sidebar';
+@import '_layout_partials/stack';
+@import '_layout_partials/box';
+@import '_layout_partials/center';
+@import '_layout_partials/the-frame';
+@import '_layout_partials/splitter';
+@import '_layout_partials/switcher';
+@import '_layout_partials/cover';
+@import '_layout_partials/reel';
+@import '_layout_partials/wrapper';
 
 // Blocks
-@import 'blocks/button';
-@import 'blocks/key-header';
-@import 'blocks/pill';
-@import 'blocks/site-head';
-@import 'blocks/summary';
-@import 'blocks/table-group';
-@import 'blocks/user';
-@import 'blocks/hero';
-@import 'blocks/tabs';
-@import 'blocks/map';
-@import 'blocks/header';
-@import 'blocks/footer';
+@import '_layout_partials/button';
+@import '_layouts/pill';
+@import '_layouts/hero';
+@import '_layouts/tabs';
+@import '_layouts/map';
+@import '_layouts/header';
+@import '_layouts/footer';
