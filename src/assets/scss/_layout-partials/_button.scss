@@ -1,0 +1,51 @@
+.button {
+  display: inline-block;
+  margin: 1rem 0 0 0;
+  font-size: 1.2rem;
+  font-family: $headings-font-family;
+  border-bottom: 1px solid transparent;
+  transition: border ease-in 200ms;
+  text-decoration: none;
+  &:focus{
+    outline: none;
+  }
+  &:hover{
+    text-decoration: none;
+    border-bottom: 1px solid var(--light);
+    transition: border ease-in 200ms;
+    color: var(--light);
+  }
+  &.standard{
+    display: inline-block;
+    &:after {
+      display: inline;
+      font-family: 'Font Awesome 5 Free';
+      content: '  \f054';
+      font-weight: 900;
+      padding: 0 5px 5px 0;
+    }
+  }
+  &.call-to-action {
+    display: inline-block;
+    color: var(--light);
+    background-size: 100% 100%;
+    text-decoration: none;
+    padding: 0.6rem 2rem;
+    cursor: pointer;
+    background: var(--primary);
+    text-align: center;
+    transition: all ease-in 200ms;
+    justify-self: center;
+
+
+    &:hover {
+      background: var(--secondary);
+      color: var(--light);
+      transition: all ease-in 200ms;
+    }
+
+    &:after {
+      content: "";
+    }
+  }
+}

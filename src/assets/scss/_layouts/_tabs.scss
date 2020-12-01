@@ -1,0 +1,77 @@
+.tabs {
+  button {
+    border: none;
+    background: transparent;
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    transition-duration: 200ms;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    cursor: pointer;
+
+    &.filter-btn {
+      border-bottom: 5px solid var(--grey);
+      color: get-color('grey');
+      padding: 1.5rem;
+    }
+
+    &.active {
+      border-bottom: 5px solid var(--primary);
+      color: var(--primary);
+      transition-duration: 200ms;
+      transition-property: all;
+      transition-timing-function: ease-out;
+    }
+    &:focus{
+      outline: none;
+    }
+
+    &:hover {
+      background-color: var(--primary-shade);
+      border-bottom: 5px solid var(--primary);
+      color: var(--light);
+      text-decoration: none;
+      transition-duration: 200ms;
+      transition-property: all;
+      transition-timing-function: ease-out;
+    }
+  }
+}
+
+.tab-content {
+  > div {
+    figure {
+      margin-bottom: var(--size-400);
+      overflow: hidden;
+      position: relative;
+
+      &:hover {
+        img {
+          transition: all 200ms ease-in-out;
+          transform: scale(1.1);
+        }
+      }
+
+      img {
+        transition: all .2s ease-in-out;
+      }
+    }
+
+    p {
+      font-size: get-size('300');
+    }
+
+    .button {
+      font-size: var(--size-300);
+      color: var(--primary);
+      justify-self: flex-start;
+
+      &:hover {
+        border-bottom: 1px solid var(--primary);
+
+      }
+    }
+  }
+}

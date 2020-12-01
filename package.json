@@ -1,0 +1,54 @@
+{
+  "name": "styling",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "google-maps-react": "^2.0.6",
+    "gorko": "^0.2.3",
+    "node-sass": "^4.14.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "react-slick": "^0.27.13",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.1",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start-sass": "npx sass src/assets/scss/global.scss src/index.css --watch",
+    "build-sass": "npx sass src/assets/scss/global.scss src/index.css --style=compressed"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@iconify/icons-mdi": "^1.0.154",
+    "@iconify/react": "^2.0.0-rc.2",
+    "google-map-react": "^2.1.9",
+    "sass": "^1.29.0",
+    "sass-loader": "^10.1.0",
+    "webpack": "^4.44.2"
+  }
+}

@@ -1,0 +1,37 @@
+//We apply the visual border styles at the highest level.
+// Then, we hide overflow because we want our tables to have a minimum width.
+// You can mess around with responsive tables, but I think that’s a lot of effort for not much return.
+// Instead, if you hide overflow and set a min-width, the data in the tables remains as intended and the user can swipe to see it.
+.table-group {
+  border: 1px solid var(--grey);
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+
+  h3 {
+    --flow-space: #{var(--size-600)};
+  }
+
+  table {
+    --flow-space: 0.2rem;
+
+    width: 100%;
+    min-width: 30rem;
+  }
+
+  td,
+  h3 {
+    padding: 0.5rem 1rem;
+  }
+
+  tr:first-child {
+    border-top: 1px solid var(--grey);
+  }
+
+  tr:nth-child(odd) td {
+    background: var(--grey);
+  }
+
+  td:nth-child(3) {
+    text-align: right;
+  }
+}
